@@ -1,0 +1,36 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}{{'Page Meta Tags :: Dashboard'|trans}}{% endblock %}
+
+{% block body %}
+    <h1>{{'Page Meta Tags'|trans}}</h1>
+
+    <table class="table details-table">
+        <tbody>
+            <tr>
+                <th>{{'ID'|trans}}</th>
+                <td>{{ page_meta_tag.id }}</td>
+            </tr>
+            <tr>
+                <th>{{'URL'|trans}}</th>
+                <td>{{ page_meta_tag.url }}</td>
+            </tr>
+            <tr>
+                <th>{{'Page Title'|trans}}</th>
+                <td>{{ page_meta_tag.title }}</td>
+            </tr>
+            <tr>
+                <th colspan="2">{{ 'Meta Tags:' | trans }}</th>
+            </tr>
+            {% for metaTag in page_meta_tag.metaTags %}
+            <tr>
+                <th>{{ metaTag.name }}</th>
+                <td>{{ metaTag.content }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('page_meta_tags_edit', {'id': page_meta_tag.id}) }}" class="button">{{ 'Edit'|trans }}</a>
+
+{% endblock %}

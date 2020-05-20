@@ -1,0 +1,19 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+index:
+  path: /{_locale}
+  locale: en
+  controller: App\Controller\ProdController::index
+  requirements:
+    _locale: en|ru|de
+
+static_page:
+  path: /{_locale}/page/{slug}
+  locale: en
+  controller: App\Controller\ProdController::staticPage
+  defaults:
+    _locale: en
+  requirements:
+    _locale: en|ru|de

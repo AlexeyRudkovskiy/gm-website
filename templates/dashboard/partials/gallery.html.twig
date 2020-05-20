@@ -1,0 +1,9 @@
+<div class="gallery" data-update-url="{{ update_url | default('') }}" data-delete-url="{{ delete_url | default('') }}" data-regenerate-url="{{ regenerate_url | default('') }}">
+    {% for photo in photos %}
+        <div class="single-photo" data-index="{{ loop.index - 1 }}">
+            <img src="{{ asset('uploads/photos/' ~ photo) }}" />
+            <a href="javascript:" data-index="{{ loop.index - 1 }}" class="button button-small delete-image">{{ 'Delete Photo' | trans }}</a>
+            <a href="javascript:" data-index="{{ loop.index - 1 }}" class="button button-small generate-image">{{ 'Generate' | trans }}</a>
+        </div>
+    {% endfor %}
+</div>

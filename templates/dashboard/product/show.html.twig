@@ -1,0 +1,36 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}{{'Dashboard :: Product' | trans}}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'Product' | trans }}</h1>
+
+    <table class="table details-table details-table-large">
+        <tbody>
+            <tr>
+                <th>{{'Id'|trans}}</th>
+                <td>{{ product.id }}</td>
+            </tr>
+            <tr>
+                <th>{{'Title'|trans}}</th>
+                <td>{{ product.id }}</td>
+            </tr>
+            <tr>
+                <th>{{'Description'|trans}}</th>
+                <td>{{ product.description }}</td>
+            </tr>
+            <tr>
+                <th>{{'Image'|trans}}</th>
+                <td>{% include 'dashboard/partials/single-photo.html.twig' with {
+                        photo: product.imageByName('admin-preview'),
+                        delete_url: path('product_delete_image', { id: product.id }),
+                        regenerate_url: path('product_regenerate_image', { id: product.id })
+                    } %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <a href="{{ path('product_edit', {'id': product.id}) }}" class="button">{{'Edit'|trans}}</a>
+
+{% endblock %}

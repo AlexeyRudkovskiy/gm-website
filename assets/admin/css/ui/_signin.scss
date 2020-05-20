@@ -1,0 +1,33 @@
+@import "../variables";
+
+.signin-wrapper {
+
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .signin-container {
+    box-sizing: border-box;
+    padding: var(--default-padding);
+    width: 300px;
+
+    background-color: white;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 3px 6px rgba(black, 0.2);
+  }
+
+  .form {
+    width: 100%;
+
+    .form-group {
+      width: 100%;
+      max-width: 100%;
+
+      .form-control {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

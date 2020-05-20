@@ -1,0 +1,10 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}{{'New static page :: Dashboard'|trans}}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'Creating new static page' | trans }}</h1>
+
+    {{ include('dashboard/static_page/_form.html.twig') }}
+
+{% endblock %}

@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="ru" target-language="ru" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="T_zS40K" resname="Phones">
+        <source>Phones</source>
+        <target>Номера телефонов</target>
+      </trans-unit>
+      <trans-unit id="Vu_PIJV" resname="Address">
+        <source>Address</source>
+        <target>Адрес</target>
+      </trans-unit>
+      <trans-unit id="sjGrPHE" resname="Work Time">
+        <source>Work Time</source>
+        <target>Время работы</target>
+      </trans-unit>
+      <trans-unit id="k8kchR5" resname="Price">
+        <source>Price</source>
+        <target>Цена</target>
+      </trans-unit>
+      <trans-unit id="M7k0ds9" resname="Time">
+        <source>Time</source>
+        <target>Время доставки</target>
+      </trans-unit>
+      <trans-unit id="FQn1YfJ" resname="Save">
+        <source>Save</source>
+        <target>Сохранить</target>
+      </trans-unit>
+      <trans-unit id="xsDhFDL" resname="Do you want to delete this advertising?">
+        <source>Do you want to delete this advertising?</source>
+        <target>Вы действительно хотите удалить этот рекламный блок?</target>
+      </trans-unit>
+      <trans-unit id="zgPeXL5" resname="Edit Advertising">
+        <source>Edit Advertising</source>
+        <target>Редактирование рекламного блока</target>
+      </trans-unit>
+      <trans-unit id="6H.X20q" resname="Advertising index">
+        <source>Advertising index</source>
+        <target>Рекламные блоки</target>
+      </trans-unit>
+      <trans-unit id="OEOXHc." resname="ID">
+        <source>ID</source>
+        <target>ID</target>
+      </trans-unit>
+      <trans-unit id="fozSBW2" resname="Title">
+        <source>Title</source>
+        <target>Заголовок</target>
+      </trans-unit>
+      <trans-unit id="Um4Ah8w" resname="Description">
+        <source>Description</source>
+        <target>Описание</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions">
+        <source>Actions</source>
+        <target>Действия</target>
+      </trans-unit>
+      <trans-unit id="DfbxytN" resname="Show">
+        <source>Show</source>
+        <target>Подробнее</target>
+      </trans-unit>
+      <trans-unit id="RkxP.QG" resname="Edit">
+        <source>Edit</source>
+        <target>Редактировать</target>
+      </trans-unit>
+      <trans-unit id="FitD3mU" resname="No ads found">
+        <source>No ads found</source>
+        <target>Не найдено ни одного рекламного блока</target>
+      </trans-unit>
+      <trans-unit id="hmTSRWj" resname="Create a first Ads?">
+        <source>Create a first Ads?</source>
+        <target>Создать первый рекламный блок?</target>
+      </trans-unit>
+      <trans-unit id="8asZP3A" resname="Advertisements index">
+        <source>Advertisements index</source>
+        <target>Список рекламных блокоы</target>
+      </trans-unit>
+      <trans-unit id="9g8HpNV" resname="Advertisements">
+        <source>Advertisements</source>
+        <target>Реклама</target>
+      </trans-unit>
+      <trans-unit id="_xlP9kq" resname="New Advertising">
+        <source>New Advertising</source>
+        <target>Новый рекламный блок</target>
+      </trans-unit>
+      <trans-unit id="3ouRZPR" resname="Creating a new Ads">
+        <source>Creating a new Ads</source>
+        <target>Создание нового рекламного блока</target>
+      </trans-unit>
+      <trans-unit id="fFD4o4p" resname="Advertising">
+        <source>Advertising</source>
+        <target>Реклама</target>
+      </trans-unit>
+      <trans-unit id="khDzts0" resname="Ads">
+        <source>Ads</source>
+        <target>Реклама</target>
+      </trans-unit>
+      <trans-unit id="GqTLC8y" resname="Image">
+        <source>Image</source>
+        <target>Изображение</target>
+      </trans-unit>
+      <trans-unit id="4tClSWj" resname="Delete">
+        <source>Delete</source>
+        <target>Удалить</target>
+      </trans-unit>
+      <trans-unit id="3NHVIj9" resname="Name">
+        <source>Name</source>
+        <target>Название</target>
+      </trans-unit>
+      <trans-unit id="TtyL_vx" resname="Products">
+        <source>Products</source>
+        <target>Товары</target>
+      </trans-unit>
+      <trans-unit id="_JpOF1V" resname="Payment Method">
+        <source>Payment Method</source>
+        <target>Способ оплаты</target>
+      </trans-unit>
+      <trans-unit id="w9QdI94" resname="House Number">
+        <source>House Number</source>
+        <target>Номер дома</target>
+      </trans-unit>
+      <trans-unit id="P8Ao.7s" resname="Apartment">
+        <source>Apartment</source>
+        <target>Квартира</target>
+      </trans-unit>
+      <trans-unit id="ls5uYZO" resname="First Name">
+        <source>First Name</source>
+        <target>Имя</target>
+      </trans-unit>
+      <trans-unit id="9VVjs4a" resname="Last Name">
+        <source>Last Name</source>
+        <target>Фамилия</target>
+      </trans-unit>
+      <trans-unit id="ctupru2" resname="Phone Number">
+        <source>Phone Number</source>
+        <target>Номер телефона</target>
+      </trans-unit>
+      <trans-unit id="giurjUG" resname="Quantity">
+        <source>Quantity</source>
+        <target>Количество</target>
+      </trans-unit>
+      <trans-unit id="_574lBd" resname="Product">
+        <source>Product</source>
+        <target>Товар</target>
+      </trans-unit>
+      <trans-unit id="Pxn_hKL" resname="Variant">
+        <source>Variant</source>
+        <target>Вариант</target>
+      </trans-unit>
+      <trans-unit id="a_CQgly" resname="Order">
+        <source>Order</source>
+        <target>Заказ</target>
+      </trans-unit>
+      <trans-unit id="GvhRkHM" resname="Size">
+        <source>Size</source>
+        <target>Размер</target>
+      </trans-unit>
+      <trans-unit id="IbERy.5" resname="Default">
+        <source>Default</source>
+        <target>Стандартный</target>
+      </trans-unit>
+      <trans-unit id="q4BUDZj" resname="Large">
+        <source>Large</source>
+        <target>Большой</target>
+      </trans-unit>
+      <trans-unit id="KSwG8AR" resname="Category">
+        <source>Category</source>
+        <target>Категория</target>
+      </trans-unit>
+      <trans-unit id="2E7rrak" resname="Photo">
+        <source>Photo</source>
+        <target>Фотография</target>
+      </trans-unit>
+      <trans-unit id="FCtnOlE" resname="You should upload only images (JPG or PNG)">
+        <source>You should upload only images (JPG or PNG)</source>
+        <target>Вы можете загружать только фотографии (JPG или PNG)</target>
+      </trans-unit>
+      <trans-unit id="uLHYlMa" resname="Categories">
+        <source>Categories</source>
+        <target>Категории</target>
+      </trans-unit>
+      <trans-unit id="47ienTP" resname="Username">
+        <source>Username</source>
+        <target>Имя пользователя</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Пароль</target>
+      </trans-unit>
+      <trans-unit id="wlM3BVR" resname="Roles">
+        <source>Roles</source>
+        <target>Роли</target>
+      </trans-unit>
+      <trans-unit id="5hX66f8" resname="Delivery Price">
+        <source>Delivery Price</source>
+        <target>Стоимость доставки</target>
+      </trans-unit>
+      <trans-unit id="pqHHUfZ" resname="Editing Category">
+        <source>Editing Category</source>
+        <target>Редактирование категории</target>
+      </trans-unit>
+      <trans-unit id="7QyVCIp" resname="Creating category :: KingsMeal">
+        <source>Creating category :: KingsMeal</source>
+        <target>Создание категории :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="MZsLri9" resname="Do you really want to delete this record?">
+        <source>Do you really want to delete this record?</source>
+        <target>Вы действительно хотите удалить эту запись?</target>
+      </trans-unit>
+      <trans-unit id="7.EY7eO" resname="Creating Category">
+        <source>Creating Category</source>
+        <target>Создание категории</target>
+      </trans-unit>
+      <trans-unit id="R_iq85y" resname="Category - %name% :: KingsMeal">
+        <source>Category - %name% :: KingsMeal</source>
+        <target>Категория - %name% :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="7KHEoWO" resname="Dashboard :: KingsMeal">
+        <source>Dashboard :: KingsMeal</source>
+        <target>Панель управления :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="Pw7tCpo" resname="Settings :: KingsMeal">
+        <source>Settings :: KingsMeal</source>
+        <target>Настройки :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="n9coxmy" resname="Add">
+        <source>Add</source>
+        <target>Добавить</target>
+      </trans-unit>
+      <trans-unit id="hVafTEa" resname="Editing Photo :: KingsMeal">
+        <source>Editing Photo :: KingsMeal</source>
+        <target>Редактирование фотографии :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="EjpuumY" resname="Photos :: KingsMeal">
+        <source>Photos :: KingsMeal</source>
+        <target>Фотографии :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="fM9DTSb" resname="Creating a photo :: KingsMeal">
+        <source>Creating a photo :: KingsMeal</source>
+        <target>Создание фотографии :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="oNvfGt5" resname="Creating a photo">
+        <source>Creating a photo</source>
+        <target>Создание фотографии</target>
+      </trans-unit>
+      <trans-unit id="KWyVe.F" resname="Back to List">
+        <source>Back to List</source>
+        <target>Вернуться к списку</target>
+      </trans-unit>
+      <trans-unit id="mqI3PQ_" resname="Photo :: KingsMeal">
+        <source>Photo :: KingsMeal</source>
+        <target>Фотография :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="x700hD_" resname="Are you sure you want to delete this photo?">
+        <source>Are you sure you want to delete this photo?</source>
+        <target>Вы действительно хотите удалить эту фотографию?</target>
+      </trans-unit>
+      <trans-unit id="bY1jF9p" resname="Editing Product - %name% :: KingsMeal">
+        <source>Editing Product - %name% :: KingsMeal</source>
+        <target>Редактирование товара - %name% :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="ZraBjVF" resname="Product :: KingsMeal">
+        <source>Product :: KingsMeal</source>
+        <target>Товар :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="MHoJdSl" resname="UAH">
+        <source>UAH</source>
+        <target>грн</target>
+      </trans-unit>
+      <trans-unit id="OIhR34V" resname="Product not found">
+        <source>Product not found</source>
+        <target>Не найдено ни одного товара</target>
+      </trans-unit>
+      <trans-unit id="Nfz5ni1" resname="Create first product?">
+        <source>Create first product?</source>
+        <target>Создать первый товар?</target>
+      </trans-unit>
+      <trans-unit id="qFLjqci" resname="Creating a Product :: KingsMeal">
+        <source>Creating a Product :: KingsMeal</source>
+        <target>Создание товара :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="N0n8HEa" resname="Creating a Product">
+        <source>Creating a Product</source>
+        <target>Создание товара</target>
+      </trans-unit>
+      <trans-unit id=".13peQX" resname="Product - %name% :: KingsMeal">
+        <source>Product - %name% :: KingsMeal</source>
+        <target>Товар - %name% :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="4hsJ6_J" resname="Back to Products">
+        <source>Back to Products</source>
+        <target>Вернуться к списку товаров</target>
+      </trans-unit>
+      <trans-unit id="REE8PZe" resname="Are you sure you want to delete this item?">
+        <source>Are you sure you want to delete this item?</source>
+        <target>Вы действительно хотите удалить этот объект?</target>
+      </trans-unit>
+      <trans-unit id="ecRCcRK" resname="General Information">
+        <source>General Information</source>
+        <target>Общая информация</target>
+      </trans-unit>
+      <trans-unit id="yq9oQvd" resname="Edit Product">
+        <source>Edit Product</source>
+        <target>Редактировать товар</target>
+      </trans-unit>
+      <trans-unit id="DgwUW6l" resname="Product Variants">
+        <source>Product Variants</source>
+        <target>Варианты товара</target>
+      </trans-unit>
+      <trans-unit id="6TLJ3fP" resname="Product - %name% - Variants - %variant% :: KingsMeal">
+        <source>Product - %name% - Variants - %variant% :: KingsMeal</source>
+        <target>Товар - %name% - Варианты - %variant% :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="GEnyok9" resname="Product - %name% - Variants :: KingsMeal">
+        <source>Product - %name% - Variants :: KingsMeal</source>
+        <target>Товар - %name% - Варианты :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="wMeVDob" resname="Variants not found">
+        <source>Variants not found</source>
+        <target>Варианты не найдены</target>
+      </trans-unit>
+      <trans-unit id="Ka.3h7V" resname="Create first variant?">
+        <source>Create first variant?</source>
+        <target>Создать первый вариант?</target>
+      </trans-unit>
+      <trans-unit id="U0OF_TX" resname="KingsMeal">
+        <source>KingsMeal</source>
+        <target>KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="qUYwZyc" resname="All Products">
+        <source>All Products</source>
+        <target>Все товары</target>
+      </trans-unit>
+      <trans-unit id="dkrHhIT" resname="Create a Product">
+        <source>Create a Product</source>
+        <target>Создать товар</target>
+      </trans-unit>
+      <trans-unit id="t_is3VI" resname="Orders">
+        <source>Orders</source>
+        <target>Заказы</target>
+      </trans-unit>
+      <trans-unit id="6jKXUjD" resname="All Orders">
+        <source>All Orders</source>
+        <target>Все заказы</target>
+      </trans-unit>
+      <trans-unit id="W5bhSgR" resname="New Orders">
+        <source>New Orders</source>
+        <target>Новые заказы</target>
+      </trans-unit>
+      <trans-unit id=".jtY8Ud" resname="All Categories">
+        <source>All Categories</source>
+        <target>Все категории</target>
+      </trans-unit>
+      <trans-unit id="lP5JOaY" resname="Create a Category">
+        <source>Create a Category</source>
+        <target>Создать категорию</target>
+      </trans-unit>
+      <trans-unit id="awzJBNC" resname="Users">
+        <source>Users</source>
+        <target>Пользователи</target>
+      </trans-unit>
+      <trans-unit id="dBz1lCM" resname="All Users">
+        <source>All Users</source>
+        <target>Все пользователи</target>
+      </trans-unit>
+      <trans-unit id="f7oiich" resname="Create an User">
+        <source>Create an User</source>
+        <target>Создать пользователя</target>
+      </trans-unit>
+      <trans-unit id="_X6doOO" resname="Other">
+        <source>Other</source>
+        <target>Прочее</target>
+      </trans-unit>
+      <trans-unit id=".lzP8s9" resname="All Ads">
+        <source>All Ads</source>
+        <target>Все рекламные блоки</target>
+      </trans-unit>
+      <trans-unit id="H4pQrNI" resname="Create an Ads">
+        <source>Create an Ads</source>
+        <target>Создать рекламный блок</target>
+      </trans-unit>
+      <trans-unit id="XjFHq1H" resname="Photos">
+        <source>Photos</source>
+        <target>Фотографии</target>
+      </trans-unit>
+      <trans-unit id="dKiDoDe" resname="Settings">
+        <source>Settings</source>
+        <target>Настройки</target>
+      </trans-unit>
+      <trans-unit id="lbmtLFY" resname="Product - %name% - Creating variant :: KingsMeal">
+        <source>Product - %name% - Creating variant :: KingsMeal</source>
+        <target>Товар - %name% - Создание варианта :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="wq2xtoQ" resname="Sign-In">
+        <source>Sign-In</source>
+        <target>Войти</target>
+      </trans-unit>
+      <trans-unit id="vhPM4Ab" resname="You are logged in as %username%">
+        <source>You are logged in as %username%</source>
+        <target>Вы уже авторизованы как %username%</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>Выйти</target>
+      </trans-unit>
+      <trans-unit id="tFWZTvI" resname="Sign-In to your account">
+        <source>Sign-In to your account</source>
+        <target>Войдите в Ваш аккаунт</target>
+      </trans-unit>
+      <trans-unit id="KpL2_.m" resname="Remember Me">
+        <source>Remember Me</source>
+        <target>Запомнить меня</target>
+      </trans-unit>
+      <trans-unit id="_g8KP0E" resname="Editing User :: KingsMeal">
+        <source>Editing User :: KingsMeal</source>
+        <target>Редактирование пользователя :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="Z2Uvy7B" resname="Users :: KingsMeal">
+        <source>Users :: KingsMeal</source>
+        <target>Пользователи :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="zn_owhE" resname="Can't find any user">
+        <source>Can't find any user</source>
+        <target>Не найдено ни одного пользователя</target>
+      </trans-unit>
+      <trans-unit id="B7YZhA2" resname="Create first user?">
+        <source>Create first user?</source>
+        <target>Создать первого пользователя?</target>
+      </trans-unit>
+      <trans-unit id="TWmQvri" resname="Creating an User :: KingsMeal">
+        <source>Creating an User :: KingsMeal</source>
+        <target>Создание нового пользователя :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="SeBoe0H" resname="User - %username% :: KingsMeal">
+        <source>User - %username% :: KingsMeal</source>
+        <target>Пользователь - %username% :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="IbGfRkr" resname="Do you want to delete this user?">
+        <source>Do you want to delete this user?</source>
+        <target>Вы действительно хотите удалить этого пользователя?</target>
+      </trans-unit>
+      <trans-unit id="shP7jra" resname="Orders :: KingsMeal">
+        <source>Orders :: KingsMeal</source>
+        <target>Заказы :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="jgDN9x_" resname="Full Name">
+        <source>Full Name</source>
+        <target>Полное имя</target>
+      </trans-unit>
+      <trans-unit id="zPLEPvJ" resname="Delivery Address">
+        <source>Delivery Address</source>
+        <target>Адрес доставки</target>
+      </trans-unit>
+      <trans-unit id="pSW_mMS" resname="Show Details">
+        <source>Show Details</source>
+        <target>Показать подробней</target>
+      </trans-unit>
+      <trans-unit id="STcxr.o" resname="Can't find any order">
+        <source>Can't find any order</source>
+        <target>Не найдено ни одного заказа</target>
+      </trans-unit>
+      <trans-unit id="kiK.MVI" resname="Order Number">
+        <source>Order Number</source>
+        <target>Номер заказа</target>
+      </trans-unit>
+      <trans-unit id="vjcC4.G" resname="Card">
+        <source>Card</source>
+        <target>Картой</target>
+      </trans-unit>
+      <trans-unit id="u8XfUk1" resname="Courier">
+        <source>Courier</source>
+        <target>Курьеру</target>
+      </trans-unit>
+      <trans-unit id=".OXoFbk" resname="Order Status">
+        <source>Order Status</source>
+        <target>Статус заказа</target>
+      </trans-unit>
+      <trans-unit id="GP3VSbL" resname="New">
+        <source>New</source>
+        <target>Новый</target>
+      </trans-unit>
+      <trans-unit id="qwEnJu1" resname="Unprocessed">
+        <source>Unprocessed</source>
+        <target>Не обработан</target>
+      </trans-unit>
+      <trans-unit id="eAT3p5q" resname="Finished">
+        <source>Finished</source>
+        <target>Готово</target>
+      </trans-unit>
+      <trans-unit id="w5AXQff" resname="Price per item">
+        <source>Price per item</source>
+        <target>Цена за единицу</target>
+      </trans-unit>
+      <trans-unit id="PLPwUX7" resname="Total Price">
+        <source>Total Price</source>
+        <target>Итоговая цена</target>
+      </trans-unit>
+      <trans-unit id="CUZYoZS" resname="Mark as Finished">
+        <source>Mark as Finished</source>
+        <target>Отметить выполненным</target>
+      </trans-unit>
+      <trans-unit id="Vnkhw4p" resname="Order - %orderId% :: KingsMeal">
+        <source>Order - %orderId% :: KingsMeal</source>
+        <target>Заказ №%orderId% :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="oTTk5aB" resname="Homepage - KingsMeal">
+        <source>Homepage - KingsMeal</source>
+        <target>KingsMeal</target>
+      </trans-unit>
+      <trans-unit id="dRGJFAz" resname="Can't find any category">
+        <source>Can't find any category</source>
+        <target>Не найдено ни одной категории</target>
+      </trans-unit>
+      <trans-unit id="WlYC0iz" resname="Create first category?">
+        <source>Create first category?</source>
+        <target>Создать первую категорию?</target>
+      </trans-unit>
+      <trans-unit id=".OYvzJA" resname="Can not find any category">
+        <source>Can not find any category</source>
+        <target>Не найдено ни одной категории</target>
+      </trans-unit>
+      <trans-unit id="qKMaj.E" resname="Edit Advertising :: KingsMeal">
+        <source>Edit Advertising :: KingsMeal</source>
+        <target>Редактирование рекламных блоков :: KingsMeal</target>
+      </trans-unit>
+      <trans-unit id=".UIt099" resname="Card Payment">
+        <source>Card Payment</source>
+        <target>Оплата картой</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

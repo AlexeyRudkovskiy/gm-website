@@ -1,0 +1,35 @@
+.editor-preview, .editor-preview-side {
+
+  p, h1, h2, h3, h4, h5, h6 {
+    margin-top: var(--default-padding);
+    margin-bottom: var(--default-padding);
+  }
+
+  ul {
+    list-style: square outside;
+  }
+
+  ol {
+    list-style: decimal outside;
+  }
+
+  ul, ol {
+    margin-top: var(--default-padding);
+    margin-bottom: var(--default-padding);
+
+    li {
+      margin-left: calc(var(--half-padding) * 2);
+      margin-top: var(--half-padding);
+      margin-bottom: var(--half-padding);
+    }
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+}

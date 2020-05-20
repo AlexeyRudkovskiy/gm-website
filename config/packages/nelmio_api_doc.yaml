@@ -1,0 +1,9 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: KingsMeal
+            description: KingsMeal API Documentation
+            version: 1.0.0
+    areas: # to filter documented areas
+        path_patterns: # an array of regexps
+            - ^/api/v1(?!/documentation)

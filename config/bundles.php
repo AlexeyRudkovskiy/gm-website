@@ -1,0 +1,25 @@
+<?php
+
+return [
+    Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' => true],
+    Symfony\Bundle\TwigBundle\TwigBundle::class => ['all' => true],
+    Symfony\Bundle\WebProfilerBundle\WebProfilerBundle::class => ['dev' => true, 'test' => true],
+    Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
+    Symfony\Bundle\DebugBundle\DebugBundle::class => ['dev' => true, 'test' => true],
+    Doctrine\Bundle\DoctrineBundle\DoctrineBundle::class => ['all' => true],
+    Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle::class => ['all' => true],
+    Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => true],
+    Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle::class => ['all' => true],
+    Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
+    Symfony\Bundle\SecurityBundle\SecurityBundle::class => ['all' => true],
+    Knp\Bundle\PaginatorBundle\KnpPaginatorBundle::class => ['all' => true],
+    Limenius\ReactBundle\LimeniusReactBundle::class => ['all' => true],
+    Nelmio\ApiDocBundle\NelmioApiDocBundle::class => ['all' => true],
+    Fidry\PsyshBundle\PsyshBundle::class => ['dev' => true, 'test' => true],
+    Nelmio\CorsBundle\NelmioCorsBundle::class => ['all' => true],
+    Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle::class => ['all' => true],
+    Knp\DoctrineBehaviors\DoctrineBehaviorsBundle::class => ['all' => true],
+    A2lix\AutoFormBundle\A2lixAutoFormBundle::class => ['all' => true],
+    A2lix\TranslationFormBundle\A2lixTranslationFormBundle::class => ['all' => true],
+    Knp\Bundle\MarkdownBundle\KnpMarkdownBundle::class => ['all' => true],
+];

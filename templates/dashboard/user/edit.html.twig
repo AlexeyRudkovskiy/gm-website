@@ -1,0 +1,7 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}{{ 'Editing User :: Dashboard' | trans }}{% endblock %}
+
+{% block body %}
+    {{ include('dashboard/user/_form.html.twig', {'button_label': 'Update'}) }}
+{% endblock %}

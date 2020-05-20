@@ -1,0 +1,62 @@
+.button {
+  --btn-border-color: var(--border-color-main);
+  --btn-paddings: var(--button-paddings);
+  --btn-text-color: var(--text-main);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  padding: var(--btn-paddings);
+  text-decoration: none;
+  outline: none;
+
+  color: var(--btn-text-color);
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid var(--btn-border-color);
+
+  user-select: none;
+
+  &.button-small {
+    --btn-paddings: var(--button-small-paddings);
+  }
+
+  .icon {
+    margin-right: var(--half-padding);
+  }
+
+  &:active, &:focus {
+    border: 1px solid $blue-color;
+  }
+}
+
+.buttons-group {
+  display: flex;
+  align-items: center;
+
+  &.button-group-pull-right {
+    justify-content: flex-end;
+  }
+
+  .button {
+    border-radius: 0;
+    border-left-width: 0;
+
+    &:first-child {
+      //border-radius: 3px 0 0 3px;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      border-left-width: 1px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
+}

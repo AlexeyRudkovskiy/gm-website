@@ -1,0 +1,125 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}{{ 'Static page - %name% :: Dashboard'|trans({'%name%':static_page.title})}}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'Static page' }}</h1>
+
+    <table class="table details-table details-table-large">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ static_page.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ static_page.title }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ static_page.slug }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ static_page.content|nl2br }}</td>
+            </tr>
+            <tr>
+                <th>Photos</th>
+                <td>
+                    <div class="photos-preview" id="photos-previews">
+                        {% for photo in static_page.photosByName('admin-preview') %}
+                            <div class="single-photo" data-index="{{ loop.index - 1 }}">
+                                <img src="{{ asset('uploads/photos/' ~ photo) }}" />
+                                <a href="javascript:" data-index="{{ loop.index - 1 }}" class="button button-small delete-image">{{ 'Delete Photo' | trans }}</a>
+                                <a href="javascript:" data-index="{{ loop.index - 1 }}" class="button button-small generate-image">{{ 'Generate' | trans }}</a>
+                            </div>
+                        {% endfor %}
+                        <div class="updating-overlay"></div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('static_page_edit', {'id': static_page.id}) }}" class="button">{{'Edit'|trans}}</a>
+{% endblock %}
+
+
+{% block javascripts %}
+    <!-- jsDelivr :: Sortable :: Latest (https://www.jsdelivr.com/package/npm/sortablejs) -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+
+    <script>
+        const el = document.getElementById('photos-previews');
+        const sortable = Sortable.create(el, {
+            dataIdAttr: 'data-id',
+            filter: '.updating-overlay',
+            onUpdate: (e) => {
+                const updateData = {};
+                const childs = document.getElementsByClassName('single-photo');
+                const formData = new FormData();
+
+                for (let index = 0; index < childs.length; index++) {
+                    const child = childs[index];
+                    const currentIndex = child.getAttribute('data-index');
+                    child.setAttribute('data-index', index);
+                    child.getElementsByClassName('delete-image')[0].setAttribute('data-index', index);
+                    child.getElementsByClassName('generate-image')[0].setAttribute('data-index', index);
+                    formData.append(`orders[${currentIndex}]`, index);
+                }
+
+                el.classList.add('show-updating-overlay');
+
+                axios.post('{{ path('static_page_update_photos_order', { 'id': static_page.id }) }}', formData)
+                    .then(response => response.data)
+                    .then(() => el.classList.remove('show-updating-overlay'));
+            }
+        });
+
+        const deletePhotoLinks = document.querySelectorAll('.delete-image');
+        const generatePhotoLinks = document.querySelectorAll('.generate-image');
+
+        for (let i = 0; i < deletePhotoLinks.length; i++) {
+            const deletePhoto = deletePhotoLinks[i];
+            deletePhoto.addEventListener('click', () => {
+                const photoIndex = deletePhoto.getAttribute('data-index');
+                const formData = new FormData();
+
+                el.classList.add('show-updating-overlay');
+                axios.delete(`{{ path('static_page_delete_photo', { 'id': static_page.id }) }}?index=${photoIndex}`)
+                    .then(response => response.data)
+                    .then(response => {
+                        const childToRemove = el.querySelector(`.single-photo[data-index="${photoIndex}"]`);
+                        el.removeChild(childToRemove);
+                        el.classList.remove('show-updating-overlay');
+
+                        const childs = document.getElementsByClassName('single-photo');
+                        for (let index = 0; index < childs.length; index++) {
+                            const child = childs[index];
+                            child.setAttribute('data-index', index);
+                            child.getElementsByClassName('delete-image')[0].setAttribute('data-index', index);
+                            child.getElementsByClassName('generate-image')[0].setAttribute('data-index', index);
+                        }
+                    });
+            });
+        }
+
+        for (let i = 0; i < generatePhotoLinks.length; i++) {
+            const generatePhotoLink = generatePhotoLinks[i];
+            generatePhotoLink.addEventListener('click', () => {
+                const photoIndex = generatePhotoLink.getAttribute('data-index');
+
+                el.classList.add('show-updating-overlay');
+                axios.get(`{{ path('static_page_generate_photo', { 'id': static_page.id }) }}?index=${photoIndex}`)
+                    .then(response => response.data)
+                    .then(response => {
+                        el.classList.remove('show-updating-overlay');
+                    });
+            });
+        }
+    </script>
+{% endblock %}
+

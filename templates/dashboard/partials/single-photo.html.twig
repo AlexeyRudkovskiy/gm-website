@@ -1,0 +1,7 @@
+{% if photo|length > 0 %}
+<div class="single-photo-container single-photo single-preview" data-delete-url="{{ delete_url | default('') }}" data-regenerate-url="{{ regenerate_url | default('') }}">
+    <img src="{{ asset('uploads/photos/' ~ photo) }}" />
+    <a href="javascript:" class="button button-small delete-image">{{ 'Delete Photo' | trans }}</a>
+    <a href="javascript:" class="button button-small generate-image">{{ 'Regenerate' | trans }}</a>
+</div>
+{% endif %}

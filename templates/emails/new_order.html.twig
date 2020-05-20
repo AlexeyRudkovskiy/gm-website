@@ -1,0 +1,70 @@
+{% extends 'email.html.twig' %}
+
+{% block body %}
+
+    <h1>{{ 'Ordered Tour' | trans }}</h1>
+
+    <table class="table details-table">
+        <tbody>
+        <tr>
+            <th>{{'ID'|trans}}</th>
+            <td>{{ order.id }}</td>
+        </tr>
+        <tr>
+            <th>{{'Status'|trans}}</th>
+            <td>{{ order.status }}</td>
+        </tr>
+        <tr>
+            <th>{{'Full Name'|trans}}</th>
+            <td>{{ order.fullName }}</td>
+        </tr>
+        <tr>
+            <th>{{'Phone Number'|trans}}</th>
+            <td><a href="tel:{{ order.phoneNumber }}">{{ order.phoneNumber }}</a></td>
+        </tr>
+        <tr>
+            <th>{{'E-Mail'|trans}}</th>
+            <td><a href="mailto:{{ order.email }}">{{ order.email }}</a></td>
+        </tr>
+        <tr>
+            <th>{{'Wishes'|trans}}</th>
+            <td>{{ order.wishes }}</td>
+        </tr>
+        <tr>
+            <th>{{'Address'}}</th>
+            <td>{{ order.pickupLocation.address }}</td>
+        </tr>
+        {% if order.pickupLocation.wishes is defined %}
+            <tr>
+                <th>{{'Address Wishes'|trans}}</th>
+                <td>{{ order.pickupLocation.wishes }}</td>
+            </tr>
+        {% endif %}
+        <tr>
+            <th>{{'Address Price'|trans}}</th>
+            <td>{{ order.pickupLocation.address_price | default('') }}</td>
+        </tr>
+        <tr>
+            <th>{{'Date and Time'|trans}}</th>
+            <td>{{ order.tourDatetime | date('m/d/Y h:i A') }}</td>
+        </tr>
+        <tr>
+            <th>{{'Car'|trans}}</th>
+            <td>{% if order.car != null %}<a href="{{ url('car_show', {id: order.car.id}) }}" target="_blank">{{ order.car.name }}</a>{% endif %}</td>
+        </tr>
+        <tr>
+            <th>{{'Wine Tours'|trans}}</th>
+            <td>
+                <ul>
+                    {% for wineTour in order.wineTours %}
+                        <li><a href="{{ url('wine_tour_show', {id: wineTour.id}) }}" target="_blank">{{ wineTour.name }}</a></li>
+                    {% endfor %}
+                </ul>
+        </tr>
+        </tbody>
+    </table>
+
+    {% if order.status == 'new' %}
+        <a href="{{ url('ordered_tours_mark_as_done', {id: order.id}) }}" class="button-small button offset-top">{{'Mark as completed' | trans}}</a>
+    {% endif %}
+{% endblock %}

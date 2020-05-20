@@ -1,0 +1,9 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}{{ 'New page with meta tags :: Dashboard' | trans}}{% endblock %}
+
+{% block body %}
+    <h1>{{'Create a new page with meta tags' | trans}}</h1>
+
+    {{ include('dashboard/page_meta_tags/_form.html.twig') }}
+{% endblock %}

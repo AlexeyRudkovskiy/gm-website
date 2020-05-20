@@ -1,0 +1,60 @@
+{% set current_path = app.request.get('_route') %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{{'Home :: Dashboard' | trans}}{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+
+    {{ encore_entry_link_tags('admin') }}
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+<div class="grid admin-container">
+    <div class="admin-sidebar">
+        <div class="admin-section-header">
+            <span class="project-name">&nbsp;</span>
+            <img src="{{ asset('assets/dashboard/logo.png') }}" class="logo" />
+        </div>
+        {% apply spaceless %}
+        {% for section in dashboard.getSidebar()  %}
+        {% if section.items|length > 0 %}
+        <nav class="nav-section">
+            <span class="nav-header">{{ section.sectionName }}</span>
+            {% for item in section.items %}
+                <a href="{{ path(item.target) }}" class="nav-item {% if current_path == item.target or current_path in item.aliases %}active{% endif %}">
+                    {{item.text|trans}}
+                    {% if item.badge > 0 %}<span class="nav-item-badge">{{ item.badge }}</span>{% endif %}
+                </a>
+            {% endfor %}
+        </nav>
+        {% endif %}
+        {% endfor %}
+        {% endapply %}
+    </div>
+    <div class="admin-content">
+        <div class="admin-section-header">
+            <nav class="admin-header-navigation">
+{#                <a href="javascript:" class="nav-item">Projects</a>#}
+            </nav>
+        </div>
+        <div class="admin-section-content {% block content_classes "" %}">
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ label }} alert-without-icon">
+                        <div class="alert-message">{{ message }}</div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+
+            {% block body %}{% endblock %}
+        </div>
+    </div>
+</div>
+
+{{ encore_entry_script_tags('admin') }}
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>

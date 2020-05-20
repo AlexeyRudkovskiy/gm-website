@@ -1,0 +1,22 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Project{% endblock %}
+
+{% block body %}
+    <h1>Project</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ project.id }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ project.image ? project.image|json_encode : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('project_edit', {'id': project.id}) }}" class="button">{{'Edit' | trans}}</a>
+{% endblock %}

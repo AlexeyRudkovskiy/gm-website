@@ -1,0 +1,44 @@
+.grid {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  &.align-center {
+    align-items: center;
+  }
+
+  .pull-right {
+    margin-left: auto;
+  }
+
+  @mixin column-base($i) {
+    width: 100% / 12 * $i;
+    flex-shrink: 0;
+    flex-grow: 0;
+    padding-right: var(--half-padding);
+    padding-left: var(--half-padding);
+
+    box-sizing: border-box;
+  }
+
+  .column {
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &.form-column {
+      width: var(--form-width);
+    }
+  }
+
+  @for $i from 1 through 12 {
+    .column-#{$i} {
+      @include column-base($i);
+    }
+  }
+
+}

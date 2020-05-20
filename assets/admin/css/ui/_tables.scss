@@ -1,0 +1,80 @@
+.table {
+  width: 100%;
+
+  &:not(.details-table) {
+    margin-bottom: var(--default-padding);
+  }
+
+  &.details-table {
+    --default-width: 700px;
+    --field-width: 150px;
+
+    width: var(--default-width);
+
+    &.details-table-large {
+      --default-width: 950px;
+      --field-width: 150px;
+    }
+
+    tr th {
+      text-align: left;
+      font-weight: bold;
+      width: var(--field-width);
+      vertical-align: top;
+      padding-top: var(--default-padding);
+      padding-bottom: var(--default-padding);
+    }
+  }
+
+  thead tr th, tbody tr td {
+    padding: var(--default-padding);
+    text-align: left;
+
+    &.pull-right {
+      text-align: right;
+    }
+
+    &.id-column {
+      width: 50px;
+    }
+
+    &.actions-column {
+      width: 225px;
+
+      &.small-actions-column {
+        width: 150px;
+      }
+    }
+  }
+
+  thead {
+    tr {
+      th {
+        font-weight: bold;
+        text-transform: uppercase;
+        background-color: white;
+        color: var(--text-main);
+      }
+    }
+  }
+
+  &:not(.details-table) {
+    tbody tr td {
+      border-bottom: 1px solid rgba(black, 0.1);
+    }
+  }
+
+  tbody tr td {
+
+    .small-image {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      object-position: center;
+      vertical-align: middle;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 3px 6px rgba(black, 0.1);
+    }
+  }
+}

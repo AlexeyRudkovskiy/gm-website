@@ -1,0 +1,23 @@
+{% set current_path = app.request.get('_route') %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Admin Dashboard{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+
+    {{ encore_entry_link_tags('admin') }}
+    {% block stylesheets %}{% endblock %}
+</head>
+<body class="signin-body">
+
+<div class="signin-wrapper">
+    <div class="signin-container">
+        {% block body %}{% endblock %}
+    </div>
+</div>
+
+{{ encore_entry_script_tags('admin') }}
+{% block javascripts %}{% endblock %}
+</body>
+</html>

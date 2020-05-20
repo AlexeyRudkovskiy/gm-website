@@ -1,0 +1,115 @@
+.admin-container {
+
+  .admin-section-header {
+    padding: var(--default-padding);
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid var(--border-color-main);
+    background-color: var(--bg-main);
+    height: 49px;
+
+    box-sizing: border-box;
+
+    .project-name {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .logo {
+      position: absolute;
+      top:  3px;
+      left: 3px;
+      width: 200px;
+    }
+
+    .admin-header-navigation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .nav-item {
+        margin-right: var(--default-padding);
+        text-decoration: none;
+        color: var(--text-main);
+        transition: 0.1s color;
+        text-transform: uppercase;
+
+        &:hover {
+          color: var(--text-base);
+        }
+      }
+    }
+  }
+
+  .admin-sidebar, .admin-content {
+    .admin-section-header {
+      background-color: white;
+    }
+  }
+
+  .admin-sidebar {
+    width: var(--sidebar-width);
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    .nav-section {
+      margin-top: var(--default-padding);
+
+      .nav-header {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: .75rem;
+        color: var(--text-secondary);
+        line-height: 1.5;
+        display: block;
+        padding: 10px 30px;
+      }
+
+      a, .nav-link {
+        outline: none;
+
+        box-sizing: border-box;
+        width: 100%;
+        text-decoration: none;
+        color: var(--text-color);
+        font-size: 0.875rem;
+
+        padding: 0 30px;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        &.active {
+          --text-color: var(--white-color);
+          background: rgba(84,147,245,.05);
+          box-shadow: inset 3px 0 0 0 var(--primary);
+        }
+
+        .nav-item-badge {
+          margin-left: auto;
+          font-size: 0.75rem;
+          color: var(--text-secondary);
+        }
+      }
+    }
+  }
+
+  .admin-content {
+    width: 100%;
+    box-sizing: border-box;
+
+    .admin-section-content {
+      padding: var(--default-padding);
+
+      &.paddingsless {
+        padding: 0;
+      }
+    }
+  }
+}

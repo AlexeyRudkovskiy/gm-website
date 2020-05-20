@@ -1,0 +1,15 @@
+.photos-grid {
+  flex-wrap: wrap;
+  align-items: stretch;
+
+  .photo-item {
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+
+      vertical-align: middle;
+    }
+  }
+}

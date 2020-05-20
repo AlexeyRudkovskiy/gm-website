@@ -1,0 +1,13 @@
+.inline-list {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+
+  li, & > * {
+    margin-left: var(--default-padding);
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

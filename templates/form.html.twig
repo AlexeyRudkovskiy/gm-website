@@ -1,0 +1,18 @@
+{% extends 'bootstrap_4_layout.html.twig' %}
+
+{#{% block collection_widget %}#}
+{#    <table>#}
+{#    {% for item in data %}#}
+{#        <tr>#}
+{#            <td>{{ item.name }}</td>#}
+{#        </tr>#}
+{#    {% endfor %}#}
+{#    </table>#}
+{#{% endblock %}#}
+
+{% block submit_row -%}
+    <div{% with {attr: row_attr|merge({class: (row_attr.class|default('') ~ ' form-group')|trim})} %}{{ block('attributes') }}{% endwith %}>
+        {{- form_widget(form) -}}
+    </div>
+{%- endblock submit_row %}
+

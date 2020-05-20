@@ -1,0 +1,76 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    previews_directory: '%kernel.project_dir%/public/uploads/photos'
+    originals_directory: '%kernel.project_dir%/var/uploads/original'
+    preview_directory_url: '/uploads/photos'
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        public: true
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+    App\Services\ConverterService:
+        shared: false
+        class: App\Services\ConverterService
+        factory: '@App\Factories\ConverterFactory'
+
+    App\Services\PhotosService:
+        shared: false
+        class: App\Services\PhotosService
+        arguments:
+            $driver: 'imagick'
+            $sizes:
+                - { name: 'admin-preview', width: 100, height: 100, crop: 0, resize: 0, fit: 1 }
+                - { name: 'post-default', width: 550, height: 285, crop: 0, resize: 0, fit: 1 }
+                - { name: 'project-default', width: 290, height: 300, crop: 0, resize: 0, fit: 1 }
+                - { name: 'product-default', width: 270, height: 200, crop: 0, resize: 0, fit: 1 }
+                - { name: 'partner-default', width: 133, height: 0, crop: 0, resize: 1, fit: 0 }
+                - { name: 'slider-default', width: 1366, height: 650, crop: 0, resize: 0, fit: 1 }
+                - { name: 'image-small', width: 210, height: 200, crop: 0, resize: 0, fit: 1 }
+                - { name: 'image-medium', width: 320, height: 200, crop: 0, resize: 0, fit: 1 }
+                - { name: 'image-large', width: 440, height: 250, crop: 0, resize: 0, fit: 1 }
+                - { name: 'image-large-smaller', width: 280, height: 250, crop: 0, resize: 0, fit: 1 }
+                - { name: 'post-small', width: 450, height: 285, crop: 0, resize: 0, fit: 1 }
+                - { name: 'post-tablet', width: 320, height: 412, crop: 0, resize: 0, fit: 1 }
+                - { name: 'post-mobile', width: 440, height: 200, crop: 0, resize: 0, fit: 1 }
+                - { name: 'post-mobile-small', width: 280, height: 200, crop: 0, resize: 0, fit: 1 }
+                - { name: 'popup-large', width: 970, height: 392, crop: 0, resize: 0, fit: 1 }
+                - { name: 'slider-small', width: 966, height: 650, crop: 0, resize: 0, fit: 1 }
+                - { name: 'slider-tablet', width: 768, height: 550, crop: 0, resize: 0, fit: 1 }
+                - { name: 'slider-mobile', width: 480, height: 400, crop: 0, resize: 0, fit: 1 }
+                - { name: 'slider-large', width: 1920, height: 650, crop: 0, resize: 0, fit: 1 }
+
+    App\Services\DashboardService:
+        shared: false
+        class: App\Services\DashboardService
+        arguments:
+            $settingsPath: '%kernel.project_dir%/settings.json'
+
+    App\EventListeners\ContactRequestCreated:
+        tags:
+            -
+                name: doctrine.orm.entity_listener
+                event: 'postPersist'
+                entity: App\Entity\ContactRequest
+                method: postPersist
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones

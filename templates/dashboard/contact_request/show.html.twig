@@ -1,0 +1,42 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}{{ 'Contact Request :: Dashboard' | trans }}{% endblock %}
+
+{% block body %}
+
+    <h1>{{ 'Contact Request' | trans }}</h1>
+
+    <table class="table details-table">
+        <tbody>
+        <tr>
+            <th>{{'ID'|trans}}</th>
+            <td>{{ request.id }}</td>
+        </tr>
+        <tr>
+            <th>{{'Status'|trans}}</th>
+            <td>{{ request.status }}</td>
+        </tr>
+        <tr>
+            <th>{{'Full Name'|trans}}</th>
+            <td>{{ request.fullName }}</td>
+        </tr>
+        <tr>
+            <th>{{'Phone Number'|trans}}</th>
+            <td><a href="tel:{{ request.phoneNumber }}">{{ request.phoneNumber }}</a></td>
+        </tr>
+        <tr>
+            <th>{{'E-Mail'|trans}}</th>
+            <td><a href="mailto:{{ request.email }}">{{ request.email }}</a></td>
+        </tr>
+        <tr>
+            <th>{{'Question'|trans}}</th>
+            <td>{{ request.question|nl2br }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    {% if request.status == 'new' %}
+    <a href="{{ path('contact_request_mark_as_done', {id: request.id}) }}" class="button-small button">{{'Mark as completed' | trans}}</a>
+    {% endif %}
+
+{% endblock %}

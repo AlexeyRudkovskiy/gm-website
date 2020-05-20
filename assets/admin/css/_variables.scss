@@ -1,0 +1,51 @@
+$blue-color: #3498db;
+$default-padding: 16px;
+
+:root {
+  --sidebar-width: 300px;
+  --default-padding: 16px;
+  --half-padding: 8px;
+  --button-paddings: 12px 16px;
+  --button-small-paddings: 8px 12px;
+  --form-width: 750px;
+  --form-control-paddings: 8px 12px;
+
+  --success: #38b249;
+  --secondary: #38b249;
+  --primary: #1665d8;
+  --warning: #f6ab2f;
+  --danger: #e6492d;
+  --info: #6977ff;
+  --success-rgb: 56,178,73;
+  --secondary-rgb: 56,178,73;
+  --primary-rgb: 22,101,216;
+  --warning-rgb: 246,171,47;
+  --danger-rgb: 230,73,45;
+  --info-rgb: 105,119,255;
+  --green: #38b249;
+  --blue: #1665d8;
+  --orange: #f6ab2f;
+  --red: #e6492d;
+  --indigo: #6977ff;
+  --yellow: #facf55;
+  --green-rgb: 56,178,73;
+  --blue-rgb: 22,101,216;
+  --orange-rgb: 246,171,47;
+  --red-rgb: 230,73,45;
+  --indigo-rgb: 105,119,255;
+  --yellow-rgb: 250,207,85;
+  --text-main: #3e3f42;
+  --text-on-color: #fff;
+  --text-adverse-main: #fff;
+  --text-base: #6b6c6f;
+  --text-adverse-base: #fbfbfd;
+  --text-secondary: #9ea0a5;
+  --text-tertiary: #cecfd2;
+  --border-color-base: #eaedf3;
+  --border-color-main: #d8dce6;
+  --border-color-highlight: #bdc2d1;
+  --border-color-adverse: #2e2e33;
+  --bg-base: #fbfbfd;
+  --bg-main: #fff;
+  --bg-adverse-main: #252529;
+}

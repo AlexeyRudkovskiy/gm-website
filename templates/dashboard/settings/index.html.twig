@@ -1,0 +1,40 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}{{ 'Settings :: Dashboard' | trans }}{% endblock %}
+
+{% block body %}
+    {{ form(form) }}
+{% endblock %}
+
+{% block javascripts %}
+
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+            crossorigin="anonymous"></script>
+
+    <script>
+        $(function() {
+            const phonesBlock = $('#form_distances');
+            const link = document.createElement('a');
+            link.href = 'javascript:';
+            link.innerText = '{{ 'Add' | trans }}';
+            link.style.marginTop = '8px';
+            link.style.display = 'inline-block';
+            link.classList.add('button', 'button-small');
+            phonesBlock.append(link);
+
+            $(link).on('click', function () {
+                let prototype = phonesBlock.data('prototype');
+
+                let newValue = phonesBlock.find('fieldset').length;
+                prototype = prototype.replace(/__name__label__/g, newValue);
+                prototype = prototype.replace(/__label__/g, newValue);
+                prototype = prototype.replace(/__name__/g, newValue);
+
+                $(prototype).insertBefore(link);
+            });
+        });
+    </script>
+
+{% endblock %}
