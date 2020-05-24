@@ -1,0 +1,24 @@
+@import "variables";
+
+body {
+  font-family: "SF Display", sans-serif;
+  font-style: normal;
+  font-size: var(--base-font-size);
+  line-height: var(--base-line-height);
+  margin: 0;
+}
+
+.container {
+  --container-width: var(--base-container-width);
+
+  width: var(--container-width);
+  margin: 0 auto;
+
+  &.container-offset-top {
+    margin-top: 100px;
+  }
+
+  &.container-offset-top-small {
+    margin-top: 15px;
+  }
+}

@@ -1,0 +1,40 @@
+@import "variables";
+
+h1, h2 {
+  position: relative;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  display: block;
+
+  &::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 5px;
+    height: 100%;
+    background-color: var(--primary-color);
+    left: 0;
+    top: 0;
+  }
+}
+
+h1 {
+  display: block;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 0.05em;
+  font-weight: 900;
+  color: var(--dark-text-color);
+  position: relative;
+  padding-left: 16px;
+}
+
+h2 {
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+
+  padding-left: 12px;
+}

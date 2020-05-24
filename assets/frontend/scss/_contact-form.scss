@@ -1,0 +1,62 @@
+@import "variables";
+
+.contact-form-container {
+  display: flex;
+  width: 100%;
+  margin-top: 40px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -2px;
+    width: 5px;
+    height: 100%;
+    background-color: var(--primary-color);
+  }
+
+  .contact-form, .contact-information {
+    width: 50%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    box-sizing: border-box;
+  }
+
+  .contact-form {
+    padding-right: 84px;
+  }
+
+  .contact-information {
+    padding-left: 84px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .contact-information-blocks {
+      display: flex;
+      align-items: flex-start;
+
+      & > :first-child {
+        margin-right: 10px;
+      }
+
+      & > :last-child {
+        margin-left: 10px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 25px;
+        letter-spacing: 0.05em;
+        color: #000000;
+
+        strong, &.strong {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

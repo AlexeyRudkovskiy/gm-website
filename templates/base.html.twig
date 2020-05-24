@@ -5,14 +5,145 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-{#    <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon">#}
+
     {% if dashboard.pageMetaTags != null and dashboard.pageMetaTags.title is not empty %}
     <title>{{ dashboard.pageMetaTags.title }}</title>
     {% else %}
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% endif %}
+
+    <link rel="stylesheet" href="{{ asset('build/frontend.css') }}" />
 </head>
 <body>
+
+    <header class="header">
+        <div class="container">
+            <nav class="header-navigation">
+                <a href="javascript:" class="logo"><img src="{{ asset('assets/frontend/logo.png') }}" /></a>
+                <a href="javascript:">Продукты и сервисы</a>
+                <a href="javascript:">Наши проекты</a>
+                <a href="javascript:">Наши партнёры</a>
+                <a href="javascript:">Контакты</a>
+                <div class="language-dropdown">
+                    <div class="current-language">Ru</div>
+                    <nav class="available-languages">
+                        <a href="javascript:" class="language-option">En</a>
+                        <a href="javascript:" class="language-option">De</a>
+                    </nav>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="content-grid content-grid-hero">
+        <div class="container">
+            <div class="content-grid-body content-grid-body-hero">
+                <div class="image">
+                    <img src="{{ asset('assets/temp/content-image.png') }}" />
+                </div>
+                <div class="content">
+                    <h1 class="content-grid-header">Hello World!</h1>
+                    <p>Сложно сказать, почему непосредственные участники технического прогресса представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть объявлены нарушающими общечеловеческие нормы этики и морали. Мы вынуждены отталкиваться от того, что перспективное планирование требует определения и уточнения переосмысления внешнеэкономических политик. Ясность нашей позиции очевидна: выбранный нами инновационный путь прекрасно подходит для реализации экономической целесообразности принимаемых решений. В своём стремлении повысить качество жизни, они забывают, что существующая теория не даёт нам иного выбора, кроме определения направлений прогрессивного развития. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-grid">
+        <div class="container">
+            <h1 class="content-grid-header">Hello World!</h1>
+            <div class="content-grid-body">
+                <div class="content">
+                    <p>Сложно сказать, почему непосредственные участники технического прогресса представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть объявлены нарушающими общечеловеческие нормы этики и морали. Мы вынуждены отталкиваться от того, что перспективное планирование требует определения и уточнения переосмысления внешнеэкономических политик. Ясность нашей позиции очевидна: выбранный нами инновационный путь прекрасно подходит для реализации экономической целесообразности принимаемых решений. В своём стремлении повысить качество жизни, они забывают, что существующая теория не даёт нам иного выбора, кроме определения направлений прогрессивного развития. </p>
+                </div>
+                <div class="image">
+                    <img src="{{ asset('assets/temp/content-image.png') }}" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container container-offset-top-small">
+
+        <h1>Продукты и сервисы</h1>
+
+        <div class="products-grid">
+            {% for i in 1..10 %}
+                <div class="product-item">
+                    <div class="image">
+                        <img src="{{ asset('assets/temp/product.jpg') }}" />
+                    </div>
+                    <div class="content">
+                        <h2>Hello World</h2>
+                        <p>Кстати,  тщательные исследования конкурентов, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут призва...</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container container-offset-top">
+
+        <h1>Наши проекты</h1>
+
+        <div class="projects-grid">
+            {% for i in 1..10 %}
+                <div class="project-item">
+                    <div class="image">
+                        <img src="{{ asset('assets/temp/project.jpg') }}" />
+                    </div>
+                    <div class="content">
+                        <h2>Транзитные доставки в любую страну мира</h2>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container container-offset-top">
+
+        <h1>Наши партнёры</h1>
+
+        <div class="partners-grid">
+            {% for i in 1..10 %}
+                <div class="partners-item">
+                    <img src="{{ asset('assets/temp/partner.png') }}" />
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container container-offset-top">
+        <h1>Остались вопросы</h1>
+
+        <div class="contact-form-container">
+            <div class="contact-form">
+                <input type="text" class="form-input" placeholder="Testing 123.." />
+                <input type="text" class="form-input" placeholder="Testing 123.." />
+                <input type="text" class="form-input" placeholder="Testing 123.." />
+                <input type="text" class="form-input" placeholder="Testing 123.." />
+                <a href="javascript:" class="button">Отправить</a>
+            </div>
+            <div class="contact-information">
+                <div class="contact-information-blocks">
+                    <div>
+                        <p class="strong">G&M Procurements KG<br>
+                            Budapester str. 41<br>
+                            10787 Berlin<br>
+                            Germany</p>
+                    </div>
+                    <div>
+                        <p> <strong>Tel:</strong>  +49 30 26 39 27 80<br>
+                            <strong>Fax:</strong> +49 30 26 39 27 8-22<br>
+                            <strong>E-Mail:</strong> office@gmproc.de</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="map"></div>
+
     {% block body %}{% endblock %}
 
     {% block javascripts %}{% endblock %}

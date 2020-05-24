@@ -49,14 +49,6 @@ class ProdController extends AbstractController
 //
 //        $manager->flush();
 
-        $p = $productRepository->findOneBy([], ['id' => 'desc']);
-
-        return $this->json([
-            'title' => $p->getTitle(),
-            'content' => $p->getContent(),
-            'description' => $p->getDescription()
-        ]);
-
         return $this->render('prod/index.html.twig', [  ]);
     }
 
