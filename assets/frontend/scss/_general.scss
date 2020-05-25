@@ -6,6 +6,10 @@ body {
   font-size: var(--base-font-size);
   line-height: var(--base-line-height);
   margin: 0;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 
 .container {

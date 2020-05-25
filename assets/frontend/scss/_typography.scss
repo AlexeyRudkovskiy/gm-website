@@ -16,6 +16,12 @@ h1, h2 {
     left: 0;
     top: 0;
   }
+
+  &.line-light {
+    &::before {
+      background-color: var(--primary-light-color);
+    }
+  }
 }
 
 h1 {
