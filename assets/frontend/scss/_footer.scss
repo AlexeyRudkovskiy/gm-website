@@ -1,0 +1,134 @@
+@import "variables";
+
+.footer {
+  background-color: var(--footer-background-color);
+  color: #ffffff;
+  letter-spacing: 0.06em;
+  font-size: 12px;
+  line-height: 179%;
+  padding-top: 57px;
+  padding-bottom: 64px;
+
+  a {
+    text-decoration: none;
+    color: #ffffff;
+
+    font-size: 12px;
+    line-height: 179%;
+
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: #ffffff;
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+    }
+  }
+
+  b {
+    font-weight: bold;
+  }
+
+  .footer-container {
+    display: flex;
+
+    .footer-section {
+      flex-grow: 0;
+      flex-shrink: 0;
+
+      margin-right: 36px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .footer-section-header {
+        //margin-bottom: 4px;
+        display: block;
+      }
+    }
+
+    .logo-section {
+      width: 170px;
+
+      display: flex;
+      flex-direction: column;
+
+      b {
+        line-height: 14px;
+      }
+
+      img {
+        margin-bottom: 30px;
+      }
+    }
+
+    .products {
+      width: 210px;
+
+      nav {
+        a {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .projects {
+      width: 318px;
+
+      p {
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .products, .projects {
+
+      nav {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .subscribe {
+      width: auto;
+      flex-grow: 1;
+      flex-shrink: 1;
+
+      form {
+        display: flex;
+        align-items: center;
+
+        input[type="submit"] {
+          margin-left: 10px;
+          padding: 6px 7px 4px;
+          margin-top: -4px;
+          border: none;
+          background-color: transparent;
+          color: #ffffff;
+          line-height: 21px;
+          font-size: 12px;
+          font-weight: bold;
+          text-transform: uppercase;
+          outline: none;
+          border-radius: 3px;
+
+          &:hover {
+            background-color: rgba(white, 0.1);
+          }
+        }
+      }
+    }
+  }
+}
