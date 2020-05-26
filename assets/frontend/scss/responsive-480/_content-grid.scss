@@ -1,0 +1,43 @@
+.content-grid {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  --content-grid-gap: 0px;
+
+  &.content-grid-hero {
+    padding-top: 78px;
+    padding-bottom: 73px;
+
+    .image {
+      display: none;
+    }
+  }
+
+  &:not(.content-grid-hero) {
+    .content-grid-body {
+      display: flex;
+      flex-direction: column;
+
+      .image {
+        order: 1;
+      }
+
+      .content {
+        order: 2;
+      }
+    }
+  }
+
+  .content-grid-body {
+    .image, .content {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    & > *:last-child {
+      &.image, &.content {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

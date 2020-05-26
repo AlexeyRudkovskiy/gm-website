@@ -1,0 +1,21 @@
+.contact-form-container {
+  .contact-information {
+    .contact-information-blocks {
+      p {
+        font-size: 15px;
+        line-height: 25px;
+      }
+
+      flex-direction: column;
+
+      & > :first-child {
+        margin-right: 0;
+      }
+
+      & > :last-child {
+        margin-top: 22px;
+        margin-left: 0;
+      }
+    }
+  }
+}

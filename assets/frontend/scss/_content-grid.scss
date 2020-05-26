@@ -5,6 +5,8 @@
   padding-top: 85px;
   padding-bottom: 85px;
 
+  --content-grid-gap: 35px;
+
   &.content-grid-hero {
     background-color: #D9D9D9;
   }
@@ -28,13 +30,20 @@
       box-sizing: border-box;
     }
 
+    .image {
+      img {
+        max-width: 100%;
+        vertical-align: middle;
+      }
+    }
+
     & > div {
       &:first-child {
-        padding-right: 35px;
+        padding-right: var(--content-grid-gap);
       }
 
       &:last-child {
-        padding-left: 35px;
+        padding-left: var(--content-grid-gap);
       }
     }
 

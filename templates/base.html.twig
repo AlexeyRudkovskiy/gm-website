@@ -38,7 +38,7 @@
     <div class="content-grid content-grid-hero">
         <div class="container">
             <div class="content-grid-body content-grid-body-hero">
-                <div class="image">
+                <div class="image hide-table hide-mobile">
                     <img src="{{ asset('assets/temp/content-image.png') }}" />
                 </div>
                 <div class="content">
@@ -112,7 +112,7 @@
         </div>
     </div>
 
-    <div class="container container-offset-top">
+    <div class="container container-offset-top-100">
 
         <h1>Наши партнёры</h1>
 
@@ -125,7 +125,7 @@
         </div>
     </div>
 
-    <div class="container container-offset-top">
+    <div class="container container-offset-top-100">
         <h1>Остались вопросы</h1>
 
         <div class="contact-form-container">
@@ -159,7 +159,9 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="logo-section footer-section">
-                <img src="{{ asset('assets/frontend/logo.png') }}" />
+                <div>
+                    <img src="{{ asset('assets/frontend/logo.png') }}" />
+                </div>
                 <b class="years">2010-2020</b>
                 <b class="years">&copy; G&M ProcurementsKG</b>
             </div>
@@ -178,12 +180,16 @@
                 <p>Hello World <a href="javascript:">google.com</a></p>
             </div>
             <div class="subscribe footer-section">
-                <b class="footer-section-header">Новости, новые объекты и тренды внешних оболочек зданий в России и в мире</b>
+                <b class="footer-section-header">Новости, новые объекты и тренды внешних оболочек зданий в России и в мире</b>
                 <form>
                     <input class="form-input form-input-light" placeholder="Введите ваш E-Mail" type="email" required />
                     <input type="submit" value="Подписаться" />
                 </form>
-                <p>Нажимая кнопку “Подписаться“ вы соглашаетесь  с <a href="javascript:">Правилами портала</a> и Политикой конфиденциальности портала</p>
+                <p class="form-info">Нажимая кнопку “Подписаться“ вы соглашаетесь  с <a href="javascript:">Правилами портала</a> и Политикой конфиденциальности портала</p>
+                <div class="visible-only-1000 margin-top">
+                    <b class="years">2010-2020</b><br>
+                    <b class="years">&copy; G&M ProcurementsKG</b>
+                </div>
             </div>
         </div>
     </footer>

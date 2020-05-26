@@ -1,0 +1,59 @@
+.footer {
+  .footer-container {
+    flex-wrap: wrap;
+
+    .footer-section {
+      width: 50%;
+      box-sizing: border-box;
+      margin: 0;
+
+      &:nth-child(2n) {
+        padding-left: 35px;
+      }
+
+      &:nth-child(2n+1) {
+        padding-right: 35px;
+      }
+
+      &:nth-child(4n), &:nth-child(4n-1) {
+        margin-top: 45px;
+      }
+
+      .footer-section-header {
+        font-size: 14px;
+        line-height: 179%;
+        letter-spacing: 0.06em;
+      }
+    }
+
+    .logo-section {
+      img {
+        margin-bottom: 15px;
+      }
+    }
+
+    .contact-form-container {
+      .form-info {
+        font-size: 10px;
+        line-height: 18px;
+        letter-spacing: 0.06em;
+      }
+    }
+
+    .products {
+      nav {
+        a {
+          margin-top: 5px;
+        }
+      }
+    }
+
+    .projects {
+      p {
+        font-size: 12px;
+        line-height: 179%;
+        letter-spacing: 0.06em;
+      }
+    }
+  }
+}

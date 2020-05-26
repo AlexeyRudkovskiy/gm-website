@@ -1,0 +1,31 @@
+.contact-form-container {
+  flex-direction: column;
+
+  &::after {
+    display: none;
+  }
+
+  .contact-form, .contact-information {
+    width: 100%;
+  }
+
+  .contact-form {
+    padding-right: 0;
+  }
+
+  .contact-information {
+    padding-left: 0;
+    display: block;
+    margin-top: 53px;
+
+    .contact-information-blocks {
+      justify-content: space-between;
+
+      p {
+        font-size: 15px;
+        line-height: 25px;
+        letter-spacing: 0.05em;
+      }
+    }
+  }
+}

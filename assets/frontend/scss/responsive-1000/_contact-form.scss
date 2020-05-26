@@ -1,0 +1,17 @@
+.contact-form-container {
+  .contact-information {
+    .contact-information-blocks {
+      flex-direction: column;
+
+
+      & > :first-child {
+        margin-right: 0;
+      }
+
+      & > :last-child {
+        margin-top: 22px;
+        margin-left: 0;
+      }
+    }
+  }
+}

@@ -22,7 +22,19 @@ body {
     margin-top: 100px;
   }
 
+  &.container-offset-top-100 {
+    margin-top: 100px;
+  }
+
   &.container-offset-top-small {
     margin-top: 15px;
   }
+}
+
+.visible-only-1000 {
+  display: none;
+}
+
+.margin-top {
+  margin-top: 15px;
 }

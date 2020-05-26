@@ -1,6 +1,9 @@
 @import "variables";
 
 .popup-container {
+
+  --popup-content-width: 970px;
+
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -14,10 +17,10 @@
   }
 
   .popup-content {
-    width: 970px;
+    width: var(--popup-content-width);
     margin: 0 auto;
-    margin-top: 300px;
-    margin-bottom: 300px;
+    margin-top:    150px;
+    margin-bottom: 150px;
     background-color: #ffffff;
 
     .popup-header {

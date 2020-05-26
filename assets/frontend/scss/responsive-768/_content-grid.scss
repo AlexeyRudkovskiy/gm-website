@@ -1,0 +1,20 @@
+.content-grid {
+  --content-grid-gap: 20px;
+
+  .content-grid-body {
+    &.content-grid-body-hero {
+      display: block;
+
+      .content {
+        width: 100%;
+        padding-left: 100px;
+        padding-right: 100px;
+      }
+    }
+  }
+
+  &:not(.content-grid-hero) {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+}

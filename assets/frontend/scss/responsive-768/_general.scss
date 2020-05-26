@@ -1,0 +1,11 @@
+.container {
+  --container-width: 680px;
+
+  &.container-offset-top {
+    margin-top: 50px;
+  }
+}
+
+.hide-table {
+  display: none;
+}

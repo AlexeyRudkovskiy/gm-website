@@ -1,0 +1,14 @@
+.container {
+  --container-width: 100%;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  &.container-offset-top-small {
+    margin-top: 0;
+  }
+
+  &.container-offset-top, &.container-offset-top-100 {
+    margin-top: 50px;
+  }
+}

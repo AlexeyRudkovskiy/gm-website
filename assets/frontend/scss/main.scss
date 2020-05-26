@@ -15,3 +15,34 @@
 @import "map";
 @import "footer";
 @import "popup";
+
+@media screen and (max-width: 1366px) and (min-width: 1000px) {
+  @import "responsive-1000/general";
+  @import "responsive-1000/content-grid";
+  @import "responsive-1000/partners-grid";
+  @import "responsive-1000/contact-form";
+  @import "responsive-1000/footer";
+  @import "responsive-1000/popup";
+}
+
+@media screen and (max-width: 999px) and (min-width: 768px) {
+  @import "responsive-768/general";
+  @import "responsive-768/content-grid";
+  @import "responsive-768/products-grid";
+  @import "responsive-768/projects-grid";
+  @import "responsive-768/partners-grid";
+  @import "responsive-768/contact-form";
+  @import "responsive-768/footer";
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  @import "responsive-480/general";
+  @import "responsive-480/content-grid";
+  @import "responsive-480/products-grid";
+  @import "responsive-480/projects-grid";
+  @import "responsive-480/partners-grid";
+  @import "responsive-480/contact-form";
+  @import "responsive-480/map";
+  @import "responsive-768/footer";
+  @import "responsive-480/footer";
+}
