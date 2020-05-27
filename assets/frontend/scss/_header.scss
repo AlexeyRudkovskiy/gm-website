@@ -6,16 +6,23 @@
 
   padding-top: 38px;
   box-sizing: border-box;
+  position: relative;
 
   .header-navigation {
     display: flex;
     width: 100%;
+    position: relative;
+    z-index: 99;
 
     align-items: center;
     justify-content: flex-end;
 
     .logo {
       margin-right: auto;
+
+      img {
+        vertical-align: middle;
+      }
     }
 
     & > a {
@@ -26,6 +33,21 @@
       text-decoration: none;
       position: relative;
       display: block;
+
+      &.menu {
+        display: none;
+        user-select: none;
+
+        &:hover {
+          &::after {
+            display: none;
+          }
+        }
+
+        img {
+          vertical-align: middle;
+        }
+      }
 
       &:not(.logo) {
         margin-right: 45px;
@@ -43,5 +65,16 @@
         }
       }
     }
+  }
+
+  .header-image {
+    height: var(--header-height);
+    width: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 98;
   }
 }

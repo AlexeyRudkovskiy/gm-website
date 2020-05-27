@@ -1,0 +1,18 @@
+.footer {
+  margin-top: 50px;
+  padding: 0;
+
+  .footer-container {
+    display: block;
+    box-sizing: border-box;
+    padding: 41px 22px 38px 22px;
+
+    .footer-section {
+      margin-top: 40px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}

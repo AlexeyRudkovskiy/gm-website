@@ -1,0 +1,12 @@
+.language-dropdown {
+  margin-left: 0;
+
+  .current-language {
+    padding: 4px 23px 4px 11px;
+
+    &::after {
+      top: 11px;
+      right: 11px;
+    }
+  }
+}

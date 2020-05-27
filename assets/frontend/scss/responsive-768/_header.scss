@@ -1,0 +1,24 @@
+.header {
+  --header-height: 550px;
+
+  .header-navigation {
+    position: relative;
+
+    & > a {
+      &:not(.logo) {
+        display: none;
+      }
+
+      &.menu {
+        display: block;
+        margin-right: 0;
+      }
+    }
+
+    .logo {
+      left: 50%;
+      transform: translateX(-50%);
+      margin-left: -18px;
+    }
+  }
+}

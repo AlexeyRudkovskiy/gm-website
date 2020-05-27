@@ -1,0 +1,40 @@
+.content-grid {
+  --content-grid-gap: 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &.content-grid-hero {
+    .image {
+      display: none;
+    }
+  }
+
+  &:not(.content-grid-hero) {
+    .content-grid-body {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .image {
+        order: 1;
+        margin-bottom: 20px;
+      }
+
+      .content {
+        order: 2;
+      }
+    }
+  }
+
+  .content-grid-body {
+    .image, .content {
+      width: 100%;
+    }
+
+    .content {
+      h1 {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}

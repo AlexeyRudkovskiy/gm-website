@@ -27,6 +27,7 @@
 
 @media screen and (max-width: 999px) and (min-width: 768px) {
   @import "responsive-768/general";
+  @import "responsive-768/header";
   @import "responsive-768/content-grid";
   @import "responsive-768/products-grid";
   @import "responsive-768/projects-grid";
@@ -37,6 +38,7 @@
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
   @import "responsive-480/general";
+  @import "responsive-480/header";
   @import "responsive-480/content-grid";
   @import "responsive-480/products-grid";
   @import "responsive-480/projects-grid";
@@ -45,4 +47,16 @@
   @import "responsive-480/map";
   @import "responsive-768/footer";
   @import "responsive-480/footer";
+}
+
+@media screen and (max-width: 479px) {
+  @import "responsive-320/general";
+  @import "responsive-320/header";
+  @import "responsive-320/header-languages-dropdown";
+  @import "responsive-320/content-grid";
+  @import "responsive-320/project-and-products-grid";
+  @import "responsive-320/partners-grid";
+  @import "responsive-320/contact-form";
+  @import "responsive-320/map";
+  @import "responsive-320/footer";
 }

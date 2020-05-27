@@ -5,7 +5,8 @@
   --base-text-color: #282828;
   --dark-text-color: #1C1C1C;
   --light-text-color: #ffffff;
-  --footer-background-color: #1A1919;
+  --base-dark-color: #1A1919;
+  --footer-background-color: var(--base-dark-color);
 
   --primary-color: #0F488B;
   --primary-light-color: #0500FF;
