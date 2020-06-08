@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Dashboard;
 
 use App\Contracts\WithUpladableFile;
 use App\Entity\Project;
@@ -12,6 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * @Route("/dashboard/project")
@@ -34,7 +35,7 @@ class ProjectController extends AbstractController implements WithUpladableFile
     /**
      * @Route("/new", name="project_new", methods={"GET","POST"})
      */
-    public function new(Request $request, PhotosService $photosService): Response
+    public function new(Request $request, PhotosService $photosService, TranslatorInterface $translator): Response
     {
         $project = new Project();
         $form = $this->createForm(ProjectType::class, $project);
@@ -46,6 +47,8 @@ class ProjectController extends AbstractController implements WithUpladableFile
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($project);
             $entityManager->flush();
+
+            $this->addFlash('success', $translator->trans('Project successfully created'));
 
             return $this->redirectToRoute('project_index');
         }
@@ -69,7 +72,7 @@ class ProjectController extends AbstractController implements WithUpladableFile
     /**
      * @Route("/{id}/edit", name="project_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Project $project, PhotosService $photosService): Response
+    public function edit(Request $request, Project $project, PhotosService $photosService, TranslatorInterface $translator): Response
     {
         $form = $this->createForm(ProjectType::class, $project);
         $form->handleRequest($request);
@@ -77,6 +80,8 @@ class ProjectController extends AbstractController implements WithUpladableFile
         if ($form->isSubmitted() && $form->isValid()) {
             $this->uploadOnePhoto($project, 'image', $form, $photosService);
             $this->getDoctrine()->getManager()->flush();
+
+            $this->addFlash('success', $translator->trans('Project successfully updated'));
 
             return $this->redirectToRoute('project_index');
         }
@@ -99,6 +104,24 @@ class ProjectController extends AbstractController implements WithUpladableFile
         }
 
         return $this->redirectToRoute('project_index');
+    }
+
+    /**
+     * @Route("/{id}/delete-image", name="project_delete_image")
+     */
+    public function deleteImage(Project $project)
+    {
+        return $this->processDeleteOneAndUpdate($project, 'image');
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     *
+     * @Route("/{id}/regenerate-photo", name="project_regenerate_image")
+     */
+    public function renegerateImage(Project $project, PhotosService $photosService)
+    {
+        return $this->processRegenerateOneAndUpdate($project, 'image', $photosService);
     }
 
     public function getEntityTypeIdentifier(): string

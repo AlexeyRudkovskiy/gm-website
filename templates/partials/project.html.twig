@@ -1,0 +1,16 @@
+<div class="grid-item" data-open-popup>
+    <div class="image">
+        <img src="{{ asset('uploads/photos/' ~ project.imageByName('product-default')) }}" />
+    </div>
+    <div class="content">
+        <h2>{{project.title}}</h2>
+        <p>{{project.description}}</p>
+    </div>
+    <div class="full-content" data-popup-content>
+        <img src="{{ asset('uploads/photos/' ~ project.imageByName('popup-large')) }}" popup-header-image />
+        <div class="body">
+            <h1 class="line-light">{{project.title}}</h1>
+            {{ project.content|markdown }}
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Dashboard;
 
 use App\Contracts\WithUpladableFile;
 use App\Entity\Partner;
@@ -12,6 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * @Route("/dashboard/partner")
@@ -34,7 +35,7 @@ class PartnerController extends AbstractController implements WithUpladableFile
     /**
      * @Route("/new", name="partner_new", methods={"GET","POST"})
      */
-    public function new(Request $request, PhotosService $photosService): Response
+    public function new(Request $request, PhotosService $photosService, TranslatorInterface $translator): Response
     {
         $partner = new Partner();
         $form = $this->createForm(PartnerType::class, $partner);
@@ -46,6 +47,8 @@ class PartnerController extends AbstractController implements WithUpladableFile
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($partner);
             $entityManager->flush();
+
+            $this->addFlash('success', $translator->trans('Partner successfully created'));
 
             return $this->redirectToRoute('partner_index');
         }
@@ -69,7 +72,7 @@ class PartnerController extends AbstractController implements WithUpladableFile
     /**
      * @Route("/{id}/edit", name="partner_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Partner $partner, PhotosService $photosService): Response
+    public function edit(Request $request, Partner $partner, PhotosService $photosService, TranslatorInterface $translator): Response
     {
         $form = $this->createForm(PartnerType::class, $partner);
         $form->handleRequest($request);
@@ -77,6 +80,8 @@ class PartnerController extends AbstractController implements WithUpladableFile
         if ($form->isSubmitted() && $form->isValid()) {
             $this->uploadOnePhoto($partner, 'image', $form, $photosService);
             $this->getDoctrine()->getManager()->flush();
+
+            $this->addFlash('success', $translator->trans('Partner successfully updated'));
 
             return $this->redirectToRoute('partner_index');
         }
@@ -99,6 +104,24 @@ class PartnerController extends AbstractController implements WithUpladableFile
         }
 
         return $this->redirectToRoute('partner_index');
+    }
+
+    /**
+     * @Route("/{id}/delete-image", name="partner_delete_image")
+     */
+    public function deleteImage(Partner $partner)
+    {
+        return $this->processDeleteOneAndUpdate($partner, 'image');
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     *
+     * @Route("/{id}/regenerate-photo", name="partner_regenerate_image")
+     */
+    public function renegerateImage(Partner $partner, PhotosService $photosService)
+    {
+        return $this->processRegenerateOneAndUpdate($partner, 'image', $photosService);
     }
 
     public function getEntityTypeIdentifier(): string

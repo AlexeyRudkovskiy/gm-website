@@ -1,0 +1,29 @@
+<div class="grid-item" data-open-popup>
+    <div class="image">
+        <img src="{{ asset('uploads/photos/' ~ product.imageByName('product-default')) }}"
+{#             srcset="{{ asset('uploads/photos/' ~ product.imageByName('product-default')) }},#}
+{#                    {{ asset('uploads/photos/' ~ product.imageByName('image-small')) }} 210w,#}
+{#                    {{ asset('uploads/photos/' ~ product.imageByName('image-medium')) }} 320w,#}
+{#                    {{ asset('uploads/photos/' ~ product.imageByName('image-large')) }} 440w,#}
+{#                    {{ asset('uploads/photos/' ~ product.imageByName('image-large-smaller')) }} 280w"#}
+{#             sizes="(max-width: 1366px) 270px,#}
+{#                        (max-width: 999px) 210px,#}
+{#                        (max-width: 767px) 320px,#}
+{#                        (max-width: 479px) 440px,#}
+{#                        (max-width: 320px) 280px,#}
+{#                        270px#}
+{#"#}
+        />
+    </div>
+    <div class="content">
+        <h2>{{product.title}}</h2>
+        <p>{{product.description}}</p>
+    </div>
+    <div class="full-content" data-popup-content>
+        <img src="{{ asset('uploads/photos/' ~ product.imageByName('popup-large')) }}" popup-header-image />
+        <div class="body">
+            <h1 class="line-light">{{product.title}}</h1>
+            {{ product.content|markdown }}
+        </div>
+    </div>
+</div>

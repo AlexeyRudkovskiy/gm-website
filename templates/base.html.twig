@@ -14,6 +14,10 @@
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% endif %}
 
+    {% for metaTag in dashboard.metaTags %}
+        <meta name="{{ metaTag.name }}" content="{{ metaTag.content }}" />
+    {% endfor %}
+
     <link rel="stylesheet" href="{{ asset('build/frontend.css') }}" />
 </head>
 <body>
@@ -23,19 +27,22 @@
             <nav class="header-navigation">
                 <a href="javascript:" class="menu"><img src="{{ asset('assets/frontend/menu.png') }}" /></a>
                 <a href="javascript:" class="logo"><img src="{{ asset('assets/frontend/logo.png') }}" /></a>
-                <a href="javascript:">Продукты и сервисы</a>
-                <a href="javascript:">Наши проекты</a>
-                <a href="javascript:">Наши партнёры</a>
-                <a href="javascript:">Контакты</a>
+                <a href="javascript:">{{'Products and services' | trans}}</a>
+                <a href="javascript:">{{ 'Our Projects' | trans }}Наши проекты</a>
+                <a href="javascript:">{{ 'Our Partners' | trans }}</a>
+                <a href="javascript:">{{'Contacts'|trans}}</a>
                 <div class="language-dropdown">
-                    <div class="current-language">Ru</div>
+                    <div class="current-language">{{dashboard.currentLocale|capitalize}}</div>
                     <nav class="available-languages">
-                        <a href="javascript:" class="language-option">En</a>
-                        <a href="javascript:" class="language-option">De</a>
+                        {% for locale in dashboard.otherLocales %}
+                        <a href="{{ path('index', { _locale: locale }) }}" class="language-option">{{locale|capitalize}}</a>
+                        {% endfor %}
                     </nav>
                 </div>
             </nav>
-            <img src="{{ asset('assets/temp/image.jpg') }}" class="header-image" />
+            <div class="header-image-wrapper">
+                <img src="{{ asset('uploads/photos/' ~ slider.firstPhoto.files['slider-large'].filename) }}" class="header-image" />
+            </div>
         </div>
     </header>
 
@@ -43,11 +50,11 @@
         <div class="container">
             <div class="content-grid-body content-grid-body-hero">
                 <div class="image hide-table hide-mobile">
-                    <img src="{{ asset('assets/temp/content-image.png') }}" />
+                    <img src="{{ asset('uploads/photos/' ~ first_block.firstPhoto.files['post-default'].filename) }}" />
                 </div>
                 <div class="content">
-                    <h1 class="content-grid-header">Hello World!</h1>
-                    <p>Сложно сказать, почему непосредственные участники технического прогресса представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть объявлены нарушающими общечеловеческие нормы этики и морали. Мы вынуждены отталкиваться от того, что перспективное планирование требует определения и уточнения переосмысления внешнеэкономических политик. Ясность нашей позиции очевидна: выбранный нами инновационный путь прекрасно подходит для реализации экономической целесообразности принимаемых решений. В своём стремлении повысить качество жизни, они забывают, что существующая теория не даёт нам иного выбора, кроме определения направлений прогрессивного развития. </p>
+                    <h1 class="content-grid-header">{{first_block.title}}</h1>
+                    {{ first_block.content|markdown }}
                 </div>
             </div>
         </div>
@@ -55,13 +62,13 @@
 
     <div class="content-grid">
         <div class="container">
-            <h1 class="content-grid-header">Hello World!</h1>
+            <h1 class="content-grid-header">{{second_block.title}}</h1>
             <div class="content-grid-body">
                 <div class="content">
-                    <p>Сложно сказать, почему непосредственные участники технического прогресса представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть объявлены нарушающими общечеловеческие нормы этики и морали. Мы вынуждены отталкиваться от того, что перспективное планирование требует определения и уточнения переосмысления внешнеэкономических политик. Ясность нашей позиции очевидна: выбранный нами инновационный путь прекрасно подходит для реализации экономической целесообразности принимаемых решений. В своём стремлении повысить качество жизни, они забывают, что существующая теория не даёт нам иного выбора, кроме определения направлений прогрессивного развития. </p>
+                    {{second_block.content|markdown}}
                 </div>
                 <div class="image">
-                    <img src="{{ asset('assets/temp/content-image.png') }}" />
+                    <img src="{{ asset('uploads/photos/' ~ first_block.firstPhoto.files['post-default'].filename) }}" />
                 </div>
             </div>
         </div>
@@ -69,89 +76,58 @@
 
     <div class="container container-offset-top-small">
 
-        <h1>Продукты и сервисы</h1>
+        <h1>{{'Products and Services' | trans}}</h1>
 
         <div class="products-and-projects-grid products-grid">
-            {% for i in 1..10 %}
-                <div class="grid-item" data-open-popup>
-                    <div class="image">
-                        <img src="{{ asset('assets/temp/product.jpg') }}" />
-                    </div>
-                    <div class="content">
-                        <h2>Hello World</h2>
-                        <p>Кстати,  тщательные исследования конкурентов, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут призва...</p>
-                    </div>
-                    <div class="full-content" data-popup-content>
-                        <img src="{{ asset('assets/temp/partner.png') }}" popup-header-image />
-                        <div class="body">
-                            <h1 class="line-light">Hello World!</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam commodi maxime modi perspiciatis possimus quam quod saepe sit veritatis. Accusamus amet nostrum sit tempore voluptatem! Accusamus, alias autem dolor dolore dolorem ea enim, eos, esse est expedita illum ipsum laudantium numquam officia perferendis quidem repellat temporibus unde vel voluptates. A ad, aliquid, blanditiis commodi cumque ducimus est, ipsa molestiae quasi quod soluta veniam. Beatae cupiditate expedita facilis fugit, iste modi nobis provident quas qui quo sequi sit vel, voluptatem. Aliquid dolorem eos est eveniet explicabo fuga labore molestiae nam nihil optio quae quaerat quidem quod reprehenderit sunt, velit voluptas!</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam commodi maxime modi perspiciatis possimus quam quod saepe sit veritatis. Accusamus amet nostrum sit tempore voluptatem! Accusamus, alias autem dolor dolore dolorem ea enim, eos, esse est expedita illum ipsum laudantium numquam officia perferendis quidem repellat temporibus unde vel voluptates. A ad, aliquid, blanditiis commodi cumque ducimus est, ipsa molestiae quasi quod soluta veniam. Beatae cupiditate expedita facilis fugit, iste modi nobis provident quas qui quo sequi sit vel, voluptatem. Aliquid dolorem eos est eveniet explicabo fuga labore molestiae nam nihil optio quae quaerat quidem quod reprehenderit sunt, velit voluptas!</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam commodi maxime modi perspiciatis possimus quam quod saepe sit veritatis. Accusamus amet nostrum sit tempore voluptatem! Accusamus, alias autem dolor dolore dolorem ea enim, eos, esse est expedita illum ipsum laudantium numquam officia perferendis quidem repellat temporibus unde vel voluptates. A ad, aliquid, blanditiis commodi cumque ducimus est, ipsa molestiae quasi quod soluta veniam. Beatae cupiditate expedita facilis fugit, iste modi nobis provident quas qui quo sequi sit vel, voluptatem. Aliquid dolorem eos est eveniet explicabo fuga labore molestiae nam nihil optio quae quaerat quidem quod reprehenderit sunt, velit voluptas!</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam commodi maxime modi perspiciatis possimus quam quod saepe sit veritatis. Accusamus amet nostrum sit tempore voluptatem! Accusamus, alias autem dolor dolore dolorem ea enim, eos, esse est expedita illum ipsum laudantium numquam officia perferendis quidem repellat temporibus unde vel voluptates. A ad, aliquid, blanditiis commodi cumque ducimus est, ipsa molestiae quasi quod soluta veniam. Beatae cupiditate expedita facilis fugit, iste modi nobis provident quas qui quo sequi sit vel, voluptatem. Aliquid dolorem eos est eveniet explicabo fuga labore molestiae nam nihil optio quae quaerat quidem quod reprehenderit sunt, velit voluptas!</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam commodi maxime modi perspiciatis possimus quam quod saepe sit veritatis. Accusamus amet nostrum sit tempore voluptatem! Accusamus, alias autem dolor dolore dolorem ea enim, eos, esse est expedita illum ipsum laudantium numquam officia perferendis quidem repellat temporibus unde vel voluptates. A ad, aliquid, blanditiis commodi cumque ducimus est, ipsa molestiae quasi quod soluta veniam. Beatae cupiditate expedita facilis fugit, iste modi nobis provident quas qui quo sequi sit vel, voluptatem. Aliquid dolorem eos est eveniet explicabo fuga labore molestiae nam nihil optio quae quaerat quidem quod reprehenderit sunt, velit voluptas!</p>
-                        </div>
-                    </div>
-                </div>
+            {% for product in products %}
+                {% include 'partials/product.html.twig' with { product: product } %}
+                {% include 'partials/product.html.twig' with { product: product } %}
             {% endfor %}
         </div>
     </div>
 
     <div class="container container-offset-top">
 
-        <h1>Наши проекты</h1>
+        <h1>{{'Our Projects' | trans}}</h1>
 
         <div class="products-and-projects-grid projects-grid">
-            {% for i in 1..10 %}
-                <div class="grid-item">
-                    <div class="image">
-                        <img src="{{ asset('assets/temp/project.jpg') }}" />
-                    </div>
-                    <div class="content">
-                        <h2>Транзитные доставки в любую страну мира</h2>
-                    </div>
-                    <div class="full-content">FULL CONTENT</div>
-                </div>
+            {% for project in projects %}
+                {% include 'partials/project.html.twig' with { project: project } %}
             {% endfor %}
         </div>
     </div>
 
     <div class="container container-offset-top-100">
 
-        <h1>Наши партнёры</h1>
+        <h1>{{'Our Partners' | trans}}</h1>
 
         <div class="partners-grid">
-            {% for i in 1..10 %}
-                <div class="partners-item">
-                    <img src="{{ asset('assets/temp/partner.png') }}" />
-                </div>
+            {% for partner in partners %}
+                {% include 'partials/partner.html.twig' with { partner: partner } %}
             {% endfor %}
         </div>
     </div>
 
     <div class="container container-offset-top-100">
-        <h1>Остались вопросы</h1>
+        <h1>{{'Have questions?' | trans}}</h1>
 
         <div class="contact-form-container">
             <div class="contact-form">
-                <input type="text" class="form-input" placeholder="Имя" required />
-                <input type="text" class="form-input" placeholder="Телефон" required />
-                <input type="email" class="form-input" placeholder="E-Mail" required />
-                <input type="text" class="form-input" placeholder="Ваш вопрос" required />
-                <a href="javascript:" class="button">Отправить</a>
+                <input type="text" class="form-input" placeholder="{{'Name'|trans}}" required />
+                <input type="text" class="form-input" placeholder="{{'Phone'|trans}}" required />
+                <input type="email" class="form-input" placeholder="{{ 'E-Mail'|trans }}" required />
+                <input type="text" class="form-input" placeholder="{{'Question'|trans}}" required />
+                <a href="javascript:" class="button">{{'Send'|trans}}</a>
             </div>
             <div class="contact-information">
                 <div class="contact-information-blocks">
                     <div>
-                        <p class="strong">G&M Procurements KG<br>
-                            Budapester str. 41<br>
-                            10787 Berlin<br>
-                            Germany</p>
+                        <p class="strong">{{ dashboard.setting('address') | nl2br }}</p>
                     </div>
                     <div>
-                        <p> <strong>Tel:</strong>  +49 30 26 39 27 80<br>
-                            <strong>Fax:</strong> +49 30 26 39 27 8-22<br>
-                            <strong>E-Mail:</strong> office@gmproc.de</p>
+                        <p> <strong>Tel:</strong>  <a href="tel:{{ dashboard.setting('phone') }}">{{ dashboard.setting('phone') }}</a><br>
+                            <strong>Fax:</strong> <a href="tel:{{ dashboard.setting('fax') }}">{{ dashboard.setting('fax') }}</a><br>
+                            <strong>E-Mail:</strong> <a href="tel:{{ dashboard.setting('email') }}">{{ dashboard.setting('email') }}</a></p>
                     </div>
                 </div>
             </div>
@@ -180,8 +156,7 @@
             </div>
             <div class="projects footer-section">
                 <b class="footer-section-header">Наши проекты</b>
-                <p>Hello World!</p>
-                <p>Hello World <a href="javascript:">google.com</a></p>
+                {{ dashboard.setting('translations.'~app.request.locale~'.projects')|markdown }}
             </div>
             <div class="subscribe footer-section">
                 <b class="footer-section-header">Новости, новые объекты и тренды внешних оболочек зданий в России и в мире</b>

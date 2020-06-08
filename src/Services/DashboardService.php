@@ -150,6 +150,21 @@ class DashboardService
         return $this->pageMetaTags;
     }
 
+    public function getCurrentLocale()
+    {
+        return $this->requestStack->getCurrentRequest()->getLocale();
+    }
+
+    public function getOtherLocales()
+    {
+        $locales = [ 'ru', 'en', 'de' ];
+        $current = $this->getCurrentLocale();
+
+        array_splice($locales, array_search($current, $locales), 1);
+
+        return $locales;
+    }
+
     private function getContactRequestsCount() {
         return $this->contactRequestRepository->getNewRequestsCount();
     }

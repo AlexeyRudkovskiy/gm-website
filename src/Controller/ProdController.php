@@ -5,7 +5,9 @@ namespace App\Controller;
 use App\Entity\Product;
 use App\Entity\ProductTranslation;
 use App\Entity\StaticPage;
+use App\Repository\PartnerRepository;
 use App\Repository\ProductRepository;
+use App\Repository\ProjectRepository;
 use App\Repository\StaticPageRepository;
 use App\Services\DashboardService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,37 +21,35 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProdController extends AbstractController
 {
 
-    public function index(DashboardService $dashboardService, ProductRepository $productRepository)
+    public function index(
+        DashboardService $dashboardService,
+        ProductRepository $productRepository,
+        ProjectRepository $projectRepository,
+        PartnerRepository $partnerRepository,
+        StaticPageRepository $staticPageRepository
+    )
     {
-//        $doctrine = $this->getDoctrine();
-//        $manager = $doctrine->getManager();
-////
-//        $product = new Product();
-////        /** @var ProductTranslation $translation
-////         */
-//        $translation = $product->translate('en');
-////
-//        $translation->setTitle('Test');
-//        $translation->setDescription('Test');
-//        $translation->setContent('Test');
-//
-//        $translation = $product->translate('ru');
-//        $translation->setTitle('Тест');
-//        $translation->setDescription('Тест');
-//        $translation->setContent('Тест');
-//
-////
-//        $product->mergeNewTranslations();
-//        $manager->persist($product);
-//        $manager->flush();
+        $products = $productRepository->findAll();
+        $projects = $projectRepository->findAll();
+        $partners = $partnerRepository->findAll();
 
-//        foreach ($product->getTranslations() as $translation) {
-//            $manager->persist($translation);;
-//        }
-//
-//        $manager->flush();
+        $firstBlock = $dashboardService->getSetting('firstBlock');
+        $secondBlock = $dashboardService->getSetting('secondBlock');
 
-        return $this->render('prod/index.html.twig', [  ]);
+        $firstBlock = $staticPageRepository->find($firstBlock);
+        $secondBlock = $staticPageRepository->find($secondBlock);
+
+        $slider = $staticPageRepository->findBySlug('slider');
+
+        return $this->render('prod/index.html.twig', [
+            'products' => $products,
+            'projects' => $projects,
+            'partners' => $partners,
+
+            'first_block' => $firstBlock,
+            'second_block' => $secondBlock,
+            'slider' => $slider
+        ]);
     }
 
     /**

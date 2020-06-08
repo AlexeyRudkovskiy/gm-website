@@ -1,11 +1,9 @@
 {% extends 'admin.html.twig' %}
 
-{% block title %}New Project{% endblock %}
+{% block title %}{{ 'Creating new Project :: Dashboard' | trans }}{% endblock %}
 
 {% block body %}
-    <h1>Create new Project</h1>
+    <h1>{{ 'Create new Project' | trans }}</h1>
 
     {{ include('dashboard/project/_form.html.twig') }}
-
-    <a href="{{ path('project_index') }}">back to list</a>
 {% endblock %}

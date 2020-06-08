@@ -1,39 +1,44 @@
 {% extends 'admin.html.twig' %}
 
-{% block title %}Project index{% endblock %}
+{% block title %}{{'Projects :: Dashboard' | trans}}{% endblock %}
 
 {% block body %}
-    <h1>Project index</h1>
+    <h1>{{'Projects'|trans}}</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Image</th>
-                <th>actions</th>
+                <th class="id-column">{{'ID'|trans}}</th>
+                <th>{{'Title'|trans}}</th>
+                <th class="actions-column pull-right">
+                    <a href="{{ path('project_new') }}" class="button button-small text-weight-normal">{{ 'Create new project' | trans }}</a>
+                </th>
             </tr>
         </thead>
         <tbody>
         {% for project in projects %}
             <tr>
                 <td>{{ project.id }}</td>
-                <td>
-                    {% include 'dashboard/partials/single-photo.html.twig' with {
-                        photo: project.imageByName('admin-preview')
-                    } %}
-                </td>
-                <td>
-                    <a href="{{ path('project_show', {'id': project.id}) }}">show</a>
-                    <a href="{{ path('project_edit', {'id': project.id}) }}">edit</a>
+                <td>{{ project.title }}</td>
+                <td class="actions-column pull-right">
+                    <div class="buttons-group button-group-pull-right">
+                        <a href="{{ path('project_show', {'id': project.id}) }}" class="button button-small">{{'Show' | trans}}</a>
+                        <a href="{{ path('project_edit', {'id': project.id}) }}" class="button button-small">{{'Edit' | trans}}</a>
+                    </div>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">
+                    <div class="alert">
+                        <div class="alert-message">{{ 'Can not find any project'|trans }}</div>
+                        <div class="alert-action">
+                            <a href="{{ path('project_new') }}" class="button">{{ 'Create first?' | trans }}</a>
+                        </div>
+                    </div>
+                </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('project_new') }}">Create new</a>
 {% endblock %}

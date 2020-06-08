@@ -31,22 +31,13 @@ class ExistingEntitiesType extends AbstractType
 
     public function configureOptions(OptionsResolver $optionsResolver)
     {
-        $staticPages = $this->staticPageRepository->findAll();
-
-        $staticPagesMap = function ($index, StaticPage $staticPage) {
-            $url = $this->router->generate('prod_static_page', [ 'slug' => $staticPage->getSlug() ]);
-            return [ $staticPage->getTitle() . ' (' . $staticPage->getSlug() . ')', $url ];
-        };
-
-        $staticPages = $this->arrayMapAssoc($staticPagesMap, $staticPages);
 
         $optionsResolver->setDefaults([
             'choices' => [
-                'Pages' => $staticPages,
                 'Other' => [
-                    'Homepage' => $this->router->generate('app_prod_index'),
-                    'Configurator' => $this->router->generate('prod_configurator'),
-                    'Fleet' => $this->router->generate('prod_fleet')
+                    'Homepage' => $this->router->generate('index'),
+                    'Homepage (russian)' => $this->router->generate('index', [ '_locale' => 'ru' ]),
+                    'Homepage (german)' => $this->router->generate('index', [ '_locale' => 'de' ])
                 ]
             ]
         ]);

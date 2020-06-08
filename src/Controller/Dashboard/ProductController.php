@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Dashboard;
 
 use App\Contracts\WithUpladableFile;
 use App\Entity\Product;
@@ -11,6 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * @Route("/dashboard/product")
@@ -37,7 +38,7 @@ class ProductController extends AbstractController implements WithUpladableFile
     /**
      * @Route("/new", name="product_new", methods={"GET","POST"})
      */
-    public function new(Request $request, PhotosService $photosService): Response
+    public function new(Request $request, PhotosService $photosService, TranslatorInterface $translator): Response
     {
         $product = new Product();
         $form = $this->createForm(ProductType::class, $product);
@@ -49,6 +50,8 @@ class ProductController extends AbstractController implements WithUpladableFile
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($product);
             $entityManager->flush();
+
+            $this->addFlash('success', $translator->trans('Product successfully created'));
 
             return $this->redirectToRoute('product_index');
         }
@@ -72,7 +75,7 @@ class ProductController extends AbstractController implements WithUpladableFile
     /**
      * @Route("/{id}/edit", name="product_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Product $product, PhotosService $photosService): Response
+    public function edit(Request $request, Product $product, PhotosService $photosService, TranslatorInterface $translator): Response
     {
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
@@ -81,7 +84,7 @@ class ProductController extends AbstractController implements WithUpladableFile
             $this->uploadOnePhoto($product, 'image', $form, $photosService);
             $this->getDoctrine()->getManager()->flush();
 
-            $this->addFlash('success', 'Product successfully updated');
+            $this->addFlash('success', $translator->trans('Product successfully updated'));
 
             return $this->redirectToRoute('product_edit', [ 'id' => $product->getId() ]);
         }

@@ -36,6 +36,8 @@ class Settings implements TranslatableInterface
 
     public $contactRequestsEmail;
 
+    public $address;
+
     /**
      * @return mixed
      */
@@ -120,9 +122,9 @@ class Settings implements TranslatableInterface
      * @param mixed $firstBlock
      * @return Settings
      */
-    public function setFirstBlock($firstBlock)
+    public function setFirstBlock(StaticPage $firstBlock)
     {
-        $this->firstBlock = $firstBlock;
+        $this->firstBlock = $firstBlock->getId();
         return $this;
     }
 
@@ -138,9 +140,9 @@ class Settings implements TranslatableInterface
      * @param mixed $secondBlock
      * @return Settings
      */
-    public function setSecondBlock($secondBlock)
+    public function setSecondBlock(StaticPage $secondBlock)
     {
-        $this->secondBlock = $secondBlock;
+        $this->secondBlock = $secondBlock->getId();
         return $this;
     }
 
@@ -159,6 +161,24 @@ class Settings implements TranslatableInterface
     public function setContactRequestsEmail($contactRequestsEmail)
     {
         $this->contactRequestsEmail = $contactRequestsEmail;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param mixed $address
+     * @return Settings
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
         return $this;
     }
 

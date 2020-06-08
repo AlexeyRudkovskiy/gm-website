@@ -1,11 +1,9 @@
 {% extends 'admin.html.twig' %}
 
-{% block title %}New Partner{% endblock %}
+{% block title %}{{ 'Create a Partner :: Dashboard' | trans }}{% endblock %}
 
 {% block body %}
-    <h1>Create new Partner</h1>
+    <h1>{{'Creating a Partner'|trans}}</h1>
 
     {{ include('dashboard/partner/_form.html.twig') }}
-
-    <a href="{{ path('partner_index') }}">back to list</a>
 {% endblock %}

@@ -5,15 +5,31 @@
 {% block body %}
     <h1>Project</h1>
 
-    <table class="table">
+    <table class="table details-table details-table-large">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>{{'ID'|trans}}</th>
                 <td>{{ project.id }}</td>
             </tr>
             <tr>
-                <th>Image</th>
-                <td>{{ project.image ? project.image|json_encode : '' }}</td>
+                <th>{{'Title'|trans}}</th>
+                <td>{{ project.title }}</td>
+            </tr>
+            <tr>
+                <th>{{'Description'|trans}}</th>
+                <td>{{ project.description }}</td>
+            </tr>
+            <tr>
+                <th>{{'Content'|trans}}</th>
+                <td>{{ project.content }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'Image'|trans }}</th>
+                <td>{% include 'dashboard/partials/single-photo.html.twig' with {
+                        photo: project.imageByName('admin-preview'),
+                        delete_url: path('project_delete_image', { id: project.id }),
+                        regenerate_url: path('project_regenerate_image', { id: project.id })
+                    } %}</td>
             </tr>
         </tbody>
     </table>
