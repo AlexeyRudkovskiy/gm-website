@@ -6,6 +6,7 @@ use A2lix\TranslationFormBundle\Form\Type\TranslationsType;
 use App\Entity\Product;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -21,6 +22,13 @@ class ProductType extends AbstractType
                 'required' => false
             ])
             ->add('showInFooter')
+            ->add('orderIndex', NumberType::class, [
+                'html5' => true,
+                'attr' => [
+                    'min' => 0,
+                    'max' => 127
+                ]
+            ])
             ->add('translations', TranslationsType::class, [
                 'fields' => [
                     'description' => [

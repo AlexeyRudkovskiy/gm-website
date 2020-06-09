@@ -28,6 +28,12 @@ class Project implements TranslatableInterface
      */
     private $image = [];
 
+    /**
+     * @var int
+     * @ORM\Column(type="smallint", nullable=false)
+     */
+    private $orderIndex = 1;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +65,24 @@ class Project implements TranslatableInterface
     public function getContent(): ?string
     {
         return $this->translate()->getContent();
+    }
+
+    /**
+     * @return int
+     */
+    public function getOrderIndex(): int
+    {
+        return $this->orderIndex ?? 1;
+    }
+
+    /**
+     * @param int $orderIndex
+     * @return Project
+     */
+    public function setOrderIndex(int $orderIndex): Project
+    {
+        $this->orderIndex = $orderIndex;
+        return $this;
     }
 
 }

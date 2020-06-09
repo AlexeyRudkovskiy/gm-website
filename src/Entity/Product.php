@@ -37,6 +37,13 @@ class Product implements TranslatableInterface
     private $showInFooter = false;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(type="smallint", nullable=false)
+     */
+    private $orderIndex = 1;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -97,5 +104,25 @@ class Product implements TranslatableInterface
         $this->showInFooter = $showInFooter;
         return $this;
     }
+
+    /**
+     * @return int
+     */
+    public function getOrderIndex(): int
+    {
+        return $this->orderIndex ?? 1;
+    }
+
+    /**
+     * @param int $orderIndex
+     * @return Product
+     */
+    public function setOrderIndex(int $orderIndex): Product
+    {
+        $this->orderIndex = $orderIndex;
+        return $this;
+    }
+
+
 
 }
