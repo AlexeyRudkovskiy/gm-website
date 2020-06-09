@@ -7,6 +7,7 @@ use App\Entity\Product;
 use App\Form\ProductType;
 use App\Services\PhotosService;
 use App\Traits\UploadFile;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,6 +16,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * @Route("/dashboard/product")
+ * @IsGranted("ROLE_PRODUCTS")
  */
 class ProductController extends AbstractController implements WithUpladableFile
 {

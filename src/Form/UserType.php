@@ -32,8 +32,11 @@ class UserType extends AbstractType
                 'choices' => [
                     'ROLE_USER' => 'ROLE_USER',
                     'ROLE_ADMIN' => 'ROLE_ADMIN',
+                    'ROLE_SEO' => 'ROLE_SEO',
                     'ROLE_MANAGER' => 'ROLE_MANAGER',
-                    'ROLE_SEO' => 'ROLE_SEO'
+                    'ROLE_PRODUCTS' => 'ROLE_PRODUCTS',
+                    'ROLE_PROJECTS' => 'ROLE_PROJECTS',
+                    'ROLE_PARTNERS' => 'ROLE_PARTNERS',
                 ],
                 'multiple' => true,
                 'expanded' => true,

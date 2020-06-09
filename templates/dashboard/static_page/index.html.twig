@@ -20,8 +20,8 @@
                 <td>{{ static_page.slug }}</td>
                 <td class="actions-column pull-right">
                     <div class="buttons-group button-group-pull-right">
-                        <a href="{{ path('static_page_show', {'id': static_page.id}) }}" class="button button-small">show</a>
-                        <a href="{{ path('static_page_edit', {'id': static_page.id}) }}" class="button button-small">edit</a>
+                        <a href="{{ path('static_page_show', {'id': static_page.id}) }}" class="button button-small">{{'Show'|trans}}</a>
+                        <a href="{{ path('static_page_edit', {'id': static_page.id}) }}" class="button button-small">{{'Edit'|trans}}</a>
                     </div>
                 </td>
             </tr>

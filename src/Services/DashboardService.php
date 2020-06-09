@@ -76,9 +76,9 @@ class DashboardService
         return [
             (new SidebarSection())
                 ->setSectionName($this->translator->trans('Entities'))
-                ->addItem('product_index', $this->translator->trans('Products'), 0, [ 'product_new', 'product_edit', 'product_show', 'ROLE_USER' ])
-                ->addItem('project_index', $this->translator->trans('Projects'), 0, [ 'project_new', 'project_edit', 'project_show', 'ROLE_USER' ])
-                ->addItem('partner_index', $this->translator->trans('Partners'), 0, [ 'partner_new', 'partner_edit', 'partner_show', 'ROLE_USER' ])
+                ->addItem('product_index', $this->translator->trans('Products'), 0, [ 'product_new', 'product_edit', 'product_show' ], 'ROLE_PRODUCTS')
+                ->addItem('project_index', $this->translator->trans('Projects'), 0, [ 'project_new', 'project_edit', 'project_show' ], 'ROLE_PROJECTS')
+                ->addItem('partner_index', $this->translator->trans('Partners'), 0, [ 'partner_new', 'partner_edit', 'partner_show' ], 'ROLE_PARTNERS')
 
                 ->filter($this->security)
             ,

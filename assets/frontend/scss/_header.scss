@@ -84,11 +84,15 @@
       z-index: 98;
     }
 
-    .header-image {
+    .header-image, img {
       height: var(--header-height);
+      max-width: 100%;
       width: 100%;
       object-fit: cover;
       vertical-align: middle;
+
+      max-width: 100%;
+      object-position: center;
     }
   }
 }

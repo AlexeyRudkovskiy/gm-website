@@ -4,9 +4,15 @@ import axios from 'axios'
     let map;
 
     window.initMap = () => {
+        let location = { lat: 52.5050293, lng: 13.3402111 };
         map = new google.maps.Map(document.querySelector('#map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8
+            center: location,
+            zoom: 17
+        });
+
+        const marker = new google.maps.Marker({
+            position: location,
+            map: map
         });
     };
 
@@ -77,7 +83,7 @@ import axios from 'axios'
             const defaultImage = 'slider-large';
             const data = slides[currentSlide];
 
-            sliderImage.src = `/uploads/photos/${data[defaultImage]}`;
+            // sliderImage.src = `/uploads/photos/${data[defaultImage]}`;
         }, 1000);
 
         contactForm.addEventListener('submit', (e) => {

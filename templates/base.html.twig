@@ -41,7 +41,16 @@
                 </div>
             </nav>
             <div class="header-image-wrapper" data-images="{{ slider.photosByNames(['slider-default', 'slider-large']) | json_encode }}">
-                <img src="{{ asset('uploads/photos/' ~ slider.firstPhoto.files['slider-large'].filename) }}" class="header-image" />
+
+                <picture class="header-image">
+                    <source media="(min-width: 1367px)" srcset="{{ asset('uploads/photos/' ~ slider.firstPhoto.files['slider-default'].filename) }}" />
+                    <source media="(min-width: 1000px) and (max-width: 1366)" srcset="{{ asset('uploads/photos/' ~ slider.firstPhoto.files['slider-large'].filename) }}" />
+                    <source media="(min-width: 681px) and (max-width: 999px)" srcset="{{ asset('uploads/photos/' ~ slider.firstPhoto.files['slider-small'].filename) }}" />
+                    <source media="(min-width: 400px) and (max-width: 680px)" srcset="{{ asset('uploads/photos/' ~ slider.firstPhoto.files['slider-tablet'].filename) }}" />
+                    <source media="(max-width: 400px)" srcset="{{ asset('uploads/photos/' ~ slider.firstPhoto.files['slider-mobile'].filename) }}" />
+
+                    <img src="{{ asset('uploads/photos/' ~ slider.firstPhoto.files['slider-default'].filename) }}" />
+                </picture>
             </div>
         </div>
     </header>

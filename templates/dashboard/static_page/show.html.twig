@@ -3,28 +3,28 @@
 {% block title %}{{ 'Static page - %name% :: Dashboard'|trans({'%name%':static_page.title})}}{% endblock %}
 
 {% block body %}
-    <h1>{{ 'Static page' }}</h1>
+    <h1>{{ 'Static page' | trans }}</h1>
 
     <table class="table details-table details-table-large">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>{{'ID'|trans}}</th>
                 <td>{{ static_page.id }}</td>
             </tr>
             <tr>
-                <th>Title</th>
+                <th>{{'Title'|trans}}</th>
                 <td>{{ static_page.title }}</td>
             </tr>
             <tr>
-                <th>Slug</th>
+                <th>{{'Slug'|trans}}</th>
                 <td>{{ static_page.slug }}</td>
             </tr>
             <tr>
-                <th>Content</th>
+                <th>{{'Content'|trans}}</th>
                 <td>{{ static_page.content|nl2br }}</td>
             </tr>
             <tr>
-                <th>Photos</th>
+                <th>{{'Photos'|trans}}</th>
                 <td>
                     <div class="photos-preview" id="photos-previews">
                         {% for photo in static_page.photosByName('admin-preview') %}

@@ -1,9 +1,9 @@
 {% extends 'admin.html.twig' %}
 
-{% block title %}Edit PageMetaTags{% endblock %}
+{% block title %}{{'Editing Meta Tags :: Dashboard' | trans}}{% endblock %}
 
 {% block body %}
-    <h1>Edit PageMetaTags</h1>
+    <h1>{{'Editing Meta Tags' | trans}}</h1>
 
     {{ include('dashboard/page_meta_tags/_form.html.twig', {'button_label': 'Update'}) }}
 
