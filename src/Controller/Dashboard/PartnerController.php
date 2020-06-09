@@ -86,7 +86,7 @@ class PartnerController extends AbstractController implements WithUpladableFile
 
             $this->addFlash('success', $translator->trans('Partner successfully updated'));
 
-            return $this->redirectToRoute('partner_index');
+            return $this->redirectToRoute('partner_edit', [ 'id' => $partner->getId() ]);
         }
 
         return $this->render('dashboard/partner/edit.html.twig', [

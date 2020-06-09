@@ -68,7 +68,7 @@ trait UploadFile
      * @param PhotosService $photosService
      * @return array
      */
-    public function uploadMultiplePhotos($object, string $fieldName, FormInterface $form, PhotosService $photosService): array
+    public function uploadMultiplePhotos($object, string $fieldName, FormInterface $form, PhotosService $photosService, $dontApply = false): array
     {
         $files = $form[$fieldName]->getData();
         $originalsDirectory = $this->getParameter('originals_directory');
@@ -100,7 +100,9 @@ trait UploadFile
             ]);
         }
 
-        call_user_func([$object, $this->getMethodName($fieldName, true)], $uploadedPhotos);
+        if (!$dontApply) {
+            call_user_func([$object, $this->getMethodName($fieldName, true)], $uploadedPhotos);
+        }
         return $uploadedPhotos;
     }
 

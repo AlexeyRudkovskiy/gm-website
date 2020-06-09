@@ -86,7 +86,7 @@ class ProjectController extends AbstractController implements WithUpladableFile
 
             $this->addFlash('success', $translator->trans('Project successfully updated'));
 
-            return $this->redirectToRoute('project_index');
+            return $this->redirectToRoute('project_edit', [ 'id' => $project->getId() ]);
         }
 
         return $this->render('dashboard/project/edit.html.twig', [

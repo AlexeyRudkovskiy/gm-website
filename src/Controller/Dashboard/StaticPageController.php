@@ -14,6 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * @Route("/dashboard/static-page")
@@ -38,7 +39,7 @@ class StaticPageController extends AbstractController implements WithUpladableFi
     /**
      * @Route("/new", name="static_page_new", methods={"GET","POST"})
      */
-    public function new(Request $request, PhotosService $photosService): Response
+    public function new(Request $request, PhotosService $photosService, TranslatorInterface $translator): Response
     {
         $staticPage = new StaticPage();
         $form = $this->createForm(StaticPageType::class, $staticPage);
@@ -46,12 +47,14 @@ class StaticPageController extends AbstractController implements WithUpladableFi
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $photos = $this->uploadMultiplePhotos($staticPage, 'photos', $form, $photosService);
+            $photos = $this->uploadMultiplePhotos($staticPage, 'photos', $form, $photosService, true);
             $staticPage->setPhotos($photos);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($staticPage);
             $entityManager->flush();
+
+            $this->addFlash('success', $translator->trans('Static page successfully created'));
 
             return $this->redirectToRoute('static_page_index');
         }
@@ -75,13 +78,13 @@ class StaticPageController extends AbstractController implements WithUpladableFi
     /**
      * @Route("/{id}/edit", name="static_page_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, StaticPage $staticPage, PhotosService $photosService): Response
+    public function edit(Request $request, StaticPage $staticPage, PhotosService $photosService, TranslatorInterface $translator): Response
     {
         $form = $this->createForm(StaticPageType::class, $staticPage);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $photos = $this->uploadMultiplePhotos($staticPage, 'photos', $form, $photosService);
+            $photos = $this->uploadMultiplePhotos($staticPage, 'photos', $form, $photosService, true);
             $currentPhotos = $staticPage->getPhotos() ?? [];
             foreach ($photos as $photo) {
                 array_push($currentPhotos, $photo);
@@ -89,8 +92,9 @@ class StaticPageController extends AbstractController implements WithUpladableFi
             $staticPage->setPhotos($currentPhotos);
 
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', $translator->trans('Static page successfully updated'));
 
-            return $this->redirectToRoute('static_page_index');
+            return $this->redirectToRoute('static_page_edit', [ 'id' => $staticPage->getId() ]);
         }
 
         return $this->render('dashboard/static_page/edit.html.twig', [

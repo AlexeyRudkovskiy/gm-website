@@ -501,6 +501,50 @@
         <source>Portal Privacy Policy</source>
         <target>__Portal Privacy Policy</target>
       </trans-unit>
+      <trans-unit id="ymFxK5V" resname="Message was sent successfully">
+        <source>Message was sent successfully</source>
+        <target>__Message was sent successfully</target>
+      </trans-unit>
+      <trans-unit id="giMaaA0" resname="Static page successfully created">
+        <source>Static page successfully created</source>
+        <target>__Static page successfully created</target>
+      </trans-unit>
+      <trans-unit id="EPCcvV0" resname="Static page successfully updated">
+        <source>Static page successfully updated</source>
+        <target>__Static page successfully updated</target>
+      </trans-unit>
+      <trans-unit id="dnpmeip" resname="Tel:">
+        <source>Tel:</source>
+        <target>__Tel:</target>
+      </trans-unit>
+      <trans-unit id="iWXRrJf" resname="Fax:">
+        <source>Fax:</source>
+        <target>__Fax:</target>
+      </trans-unit>
+      <trans-unit id="7zTZPzG" resname="E-Mail:">
+        <source>E-Mail:</source>
+        <target>__E-Mail:</target>
+      </trans-unit>
+      <trans-unit id="AyjuCgn" resname="Editing Meta Tags :: Dashboard">
+        <source>Editing Meta Tags :: Dashboard</source>
+        <target>__Editing Meta Tags :: Dashboard</target>
+      </trans-unit>
+      <trans-unit id="E5eySh3" resname="Editing Meta Tags">
+        <source>Editing Meta Tags</source>
+        <target>__Editing Meta Tags</target>
+      </trans-unit>
+      <trans-unit id="ReGPWya" resname="Static page">
+        <source>Static page</source>
+        <target>__Static page</target>
+      </trans-unit>
+      <trans-unit id="0VOH7Mb" resname="Slug">
+        <source>Slug</source>
+        <target>__Slug</target>
+      </trans-unit>
+      <trans-unit id="XjFHq1H" resname="Photos">
+        <source>Photos</source>
+        <target>__Photos</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
