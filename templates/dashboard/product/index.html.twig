@@ -41,6 +41,8 @@
         {% endfor %}
         </tbody>
     </table>
+
+    {{ knp_pagination_render(products) }}
 {% endblock %}
 
 {%- block javascript -%}

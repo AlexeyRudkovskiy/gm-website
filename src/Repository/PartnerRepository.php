@@ -5,6 +5,8 @@ namespace App\Repository;
 use App\Entity\Partner;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @method Partner|null find($id, $lockMode = null, $lockVersion = null)
@@ -17,6 +19,15 @@ class PartnerRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Partner::class);
+    }
+
+    public function findPaginated(PaginatorInterface $paginator, Request $request)
+    {
+        $query = $this->createQueryBuilder('partner')
+            ->orderBy('partner.id', 'DESC')
+            ->getQuery();
+
+        return $paginator->paginate($query, $request->query->getInt('page', 1), 10);
     }
 
     // /**

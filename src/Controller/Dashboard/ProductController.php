@@ -5,8 +5,10 @@ namespace App\Controller\Dashboard;
 use App\Contracts\WithUpladableFile;
 use App\Entity\Product;
 use App\Form\ProductType;
+use App\Repository\ProductRepository;
 use App\Services\PhotosService;
 use App\Traits\UploadFile;
+use Knp\Component\Pager\PaginatorInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,11 +28,9 @@ class ProductController extends AbstractController implements WithUpladableFile
     /**
      * @Route("/", name="product_index", methods={"GET"})
      */
-    public function index(): Response
+    public function index(PaginatorInterface $paginator, Request $request, ProductRepository $productRepository): Response
     {
-        $products = $this->getDoctrine()
-            ->getRepository(Product::class)
-            ->findAll();
+        $products = $productRepository->findPaginated($paginator, $request);
 
         return $this->render('dashboard/product/index.html.twig', [
             'products' => $products,

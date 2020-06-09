@@ -8,6 +8,7 @@ use App\Form\ProjectType;
 use App\Repository\ProjectRepository;
 use App\Services\PhotosService;
 use App\Traits\UploadFile;
+use Knp\Component\Pager\PaginatorInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,10 +28,10 @@ class ProjectController extends AbstractController implements WithUpladableFile
     /**
      * @Route("/", name="project_index", methods={"GET"})
      */
-    public function index(ProjectRepository $projectRepository): Response
+    public function index(ProjectRepository $projectRepository, PaginatorInterface $paginator, Request $request): Response
     {
         return $this->render('dashboard/project/index.html.twig', [
-            'projects' => $projectRepository->findAll(),
+            'projects' => $projectRepository->findPaginated($paginator, $request),
         ]);
     }
 

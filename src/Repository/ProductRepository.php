@@ -5,6 +5,8 @@ namespace App\Repository;
 use App\Entity\Product;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @method Product|null find($id, $lockMode = null, $lockVersion = null)
@@ -26,6 +28,15 @@ class ProductRepository extends ServiceEntityRepository
             ->setParameter('bool', true)
             ->getQuery()
             ->getResult();
+    }
+
+    public function findPaginated(PaginatorInterface $paginator, Request $request)
+    {
+        $query = $this->createQueryBuilder('p')
+            ->orderBy('p.id', 'DESC')
+            ->getQuery();
+
+        return $paginator->paginate($query, $request->query->getInt('page', 1), 10);
     }
 
     // /**

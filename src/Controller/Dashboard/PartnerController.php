@@ -8,6 +8,7 @@ use App\Form\PartnerType;
 use App\Repository\PartnerRepository;
 use App\Services\PhotosService;
 use App\Traits\UploadFile;
+use Knp\Component\Pager\PaginatorInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,10 +28,10 @@ class PartnerController extends AbstractController implements WithUpladableFile
     /**
      * @Route("/", name="partner_index", methods={"GET"})
      */
-    public function index(PartnerRepository $partnerRepository): Response
+    public function index(PartnerRepository $partnerRepository, PaginatorInterface $paginator, Request $request): Response
     {
         return $this->render('dashboard/partner/index.html.twig', [
-            'partners' => $partnerRepository->findAll(),
+            'partners' => $partnerRepository->findPaginated($paginator, $request),
         ]);
     }
 
