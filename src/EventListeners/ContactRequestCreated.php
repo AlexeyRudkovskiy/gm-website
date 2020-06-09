@@ -30,7 +30,7 @@ class ContactRequestCreated
 
     public function postPersist(ContactRequest $contactRequest, LifecycleEventArgs $args)
     {
-        $email = $this->dashboard->getSetting('contactEmail');
+        $email = $this->dashboard->getSetting('contactRequestsEmail');
         $message = (new \Swift_Message('New contact request'))
             ->setFrom($email)
             ->setTo($email)

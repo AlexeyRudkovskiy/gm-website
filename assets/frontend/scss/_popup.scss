@@ -3,6 +3,7 @@
 .popup-container {
 
   --popup-content-width: 970px;
+  --popup-content-paddings: 30px 70px;
 
   position: fixed;
   width: 100%;
@@ -42,7 +43,7 @@
 
     .content {
       box-sizing: border-box;
-      padding: 30px 70px;
+      padding: var(--popup-content-paddings);
 
       h1 {
         margin-bottom: 24px;

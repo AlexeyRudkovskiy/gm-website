@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 (() => {
     let map;
 
@@ -14,6 +16,7 @@
         const popup = document.querySelector('.popup-container');
         const popupContent = popup.querySelector('.popup-content .content');
         const popupClose = popup.querySelector('.popup-header .close-button');
+        const contactForm = document.querySelector('#contact-form');
         const slider = document.querySelector('.header-image-wrapper');
         const sliderImage = slider.querySelector('img');
         const slidesJson = slider.getAttribute('data-images');
@@ -76,6 +79,17 @@
 
             sliderImage.src = `/uploads/photos/${data[defaultImage]}`;
         }, 1000);
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+            axios.post(`/api/contact`, formData)
+                .then(response => response.data)
+                .then(response => alert(response.message))
+                .then(() => e.target.reset())
+                .catch(() => alert('Something went wrong'));
+        });
     });
 
 })();

@@ -82,6 +82,14 @@ class DashboardService
 
                 ->filter($this->security)
             ,
+
+            (new SidebarSection())
+                ->setSectionName($this->translator->trans('Contact Requests'))
+                ->addItem('contact_request_index', $this->translator->trans('Contact Requests'), $this->getContactRequestsCount(), [], 'ROLE_MANAGER')
+
+                ->filter($this->security),
+
+
             (new SidebarSection())
                 ->setSectionName($this->translator->trans('Settings'))
                 ->addItem('page_meta_tags_index', $this->translator->trans('Meta Tags'), 0, [ 'page_meta_tags_new', 'page_meta_tags_show', 'page_meta_tags_edit' ], 'ROLE_SEO')

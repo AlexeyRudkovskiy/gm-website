@@ -6,6 +6,7 @@ use App\Entity\ContactRequest;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * Class APIController
@@ -21,7 +22,7 @@ class APIController extends AbstractController
      *
      * @Route("/contact", methods={"POST"})
      */
-    public function createContactRequest(Request $request)
+    public function createContactRequest(Request $request, TranslatorInterface $translator)
     {
         $data = $this->validateAndGet($request, [
             'fullName',
@@ -51,7 +52,8 @@ class APIController extends AbstractController
         $manager->flush();
 
         return $this->json([
-            'status' => 'success'
+            'status' => 'success',
+            'message' => $translator->trans('Message was sent successfully')
         ]);
     }
 

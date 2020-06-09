@@ -50,7 +50,16 @@
         <div class="container">
             <div class="content-grid-body content-grid-body-hero">
                 <div class="image hide-table hide-mobile">
-                    <img src="{{ asset('uploads/photos/' ~ first_block.firstPhoto.files['post-default'].filename) }}" />
+
+                    <picture>
+                        <source media="(min-width: 1367px)" srcset="{{ asset('uploads/photos/' ~ first_block.firstPhoto.files['post-default'].filename) }}" />
+                        <source media="(min-width: 1000px) and (max-width: 1366)" srcset="{{ asset('uploads/photos/' ~ first_block.firstPhoto.files['post-small'].filename) }}" />
+                        <source media="(min-width: 681px) and (max-width: 999px)" srcset="{{ asset('uploads/photos/' ~ first_block.firstPhoto.files['post-tablet'].filename) }}" />
+                        <source media="(min-width: 400px) and (max-width: 680px)" srcset="{{ asset('uploads/photos/' ~ first_block.firstPhoto.files['post-mobile'].filename) }}" />
+                        <source media="(max-width: 400px)" srcset="{{ asset('uploads/photos/' ~ first_block.firstPhoto.files['post-mobile-small'].filename) }}" />
+
+                        <img src="{{ asset('uploads/photos/' ~ first_block.firstPhoto.files['post-default'].filename) }}" />
+                    </picture>
                 </div>
                 <div class="content">
                     <h1 class="content-grid-header">{{first_block.title}}</h1>
@@ -68,7 +77,16 @@
                     {{second_block.content|markdown}}
                 </div>
                 <div class="image">
-                    <img src="{{ asset('uploads/photos/' ~ first_block.firstPhoto.files['post-default'].filename) }}" />
+
+                    <picture>
+                        <source media="(min-width: 1367px)" srcset="{{ asset('uploads/photos/' ~ second_block.firstPhoto.files['post-default'].filename) }}" />
+                        <source media="(min-width: 1000px) and (max-width: 1366)" srcset="{{ asset('uploads/photos/' ~ second_block.firstPhoto.files['post-small'].filename) }}" />
+                        <source media="(min-width: 681px) and (max-width: 999px)" srcset="{{ asset('uploads/photos/' ~ second_block.firstPhoto.files['post-tablet'].filename) }}" />
+                        <source media="(min-width: 400px) and (max-width: 680px)" srcset="{{ asset('uploads/photos/' ~ second_block.firstPhoto.files['post-mobile'].filename) }}" />
+                        <source media="(max-width: 400px)" srcset="{{ asset('uploads/photos/' ~ second_block.firstPhoto.files['post-mobile-small'].filename) }}" />
+
+                        <img src="{{ asset('uploads/photos/' ~ second_block.firstPhoto.files['post-default'].filename) }}" />
+                    </picture>
                 </div>
             </div>
         </div>
@@ -112,22 +130,22 @@
         <h1>{{'Have questions?' | trans}}</h1>
 
         <div class="contact-form-container">
-            <div class="contact-form">
-                <input type="text" class="form-input" placeholder="{{'Full Name'|trans}}" required />
-                <input type="text" class="form-input" placeholder="{{'Phone'|trans}}" required />
-                <input type="email" class="form-input" placeholder="{{ 'E-Mail'|trans }}" required />
-                <input type="text" class="form-input" placeholder="{{'Question'|trans}}" required />
-                <a href="javascript:" class="button">{{'Send'|trans}}</a>
-            </div>
+            <form class="contact-form" id="contact-form">
+                <input type="text" class="form-input" placeholder="{{'Full Name'|trans}}" name="fullName" required />
+                <input type="text" class="form-input" placeholder="{{'Phone'|trans}}" name="phoneNumber" required />
+                <input type="email" class="form-input" placeholder="{{ 'E-Mail'|trans }}" name="email" required />
+                <input type="text" class="form-input" placeholder="{{'Question'|trans}}" name="question" required />
+                <input type="submit" class="button" value="{{'Send'|trans}}" />
+            </form>
             <div class="contact-information">
                 <div class="contact-information-blocks">
                     <div>
                         <p class="strong">{{ dashboard.setting('address') | nl2br }}</p>
                     </div>
                     <div>
-                        <p> <strong>Tel:</strong>  <a href="tel:{{ dashboard.setting('phone') }}">{{ dashboard.setting('phone') }}</a><br>
-                            <strong>Fax:</strong> <a href="tel:{{ dashboard.setting('fax') }}">{{ dashboard.setting('fax') }}</a><br>
-                            <strong>E-Mail:</strong> <a href="tel:{{ dashboard.setting('email') }}">{{ dashboard.setting('email') }}</a></p>
+                        <p> <strong>{{ 'Tel:' | trans }}</strong>  <a href="tel:{{ dashboard.setting('phone') }}">{{ dashboard.setting('phone') }}</a><br>
+                            <strong>{{ 'Fax:' | trans }}</strong> <a href="tel:{{ dashboard.setting('fax') }}">{{ dashboard.setting('fax') }}</a><br>
+                            <strong>{{ 'E-Mail:' | trans }}</strong> <a href="tel:{{ dashboard.setting('email') }}">{{ dashboard.setting('email') }}</a></p>
                     </div>
                 </div>
             </div>
@@ -158,12 +176,6 @@
                 {{ dashboard.setting('translations.'~app.request.locale~'.projects')|markdown }}
             </div>
             <div class="subscribe footer-section">
-                <b class="footer-section-header">{{ 'Subscribe header' | trans }}</b>
-                <form>
-                    <input class="form-input form-input-light" placeholder="{{ 'Your E-Mail' | trans }}" type="email" required />
-                    <input type="submit" value="{{'Subscribe'|trans}}" />
-                </form>
-                <p class="form-info">{{ 'By clicking the "Subscribe" button you agree to' | trans }} <a href="javascript:">{{'Website Rules'|trans}}</a> {{'and'|trans}} <a href="javascript:">{{ 'Portal Privacy Policy' | trans }}</a></p>
                 <div class="visible-only-1000 margin-top">
                     <b class="years">2010-{{'now'|date('Y')}}</b><br>
                     <b class="years">&copy; G&M ProcurementsKG</b>
