@@ -1,13 +1,32 @@
-<div class="grid-item" data-open-popup>
+<div class="grid-item" data-open-popup id="project-{{ project.id }}">
     <div class="image">
-        <img src="{{ asset('uploads/photos/' ~ project.imageByName('product-default')) }}" />
+
+        <picture>
+            <source media="(min-width: 1367px)" srcset="{{ asset('uploads/photos/' ~ project.imageByName('project-default')) }}" />
+            <source media="(min-width: 1000px) and (max-width: 1366)" srcset="{{ asset('uploads/photos/' ~ project.imageByName('image-small')) }}" />
+            <source media="(min-width: 681px) and (max-width: 999px)" srcset="{{ asset('uploads/photos/' ~ project.imageByName('image-medium')) }}" />
+            <source media="(min-width: 400px) and (max-width: 680px)" srcset="{{ asset('uploads/photos/' ~ project.imageByName('image-large')) }}" />
+            <source media="(max-width: 400px)" srcset="{{ asset('uploads/photos/' ~ project.imageByName('image-large-smaller')) }}" />
+
+            <img src="{{ asset('uploads/photos/' ~ project.imageByName('project-default')) }}" />
+        </picture>
     </div>
     <div class="content">
         <h2>{{project.title}}</h2>
         <p>{{project.description}}</p>
     </div>
     <div class="full-content" data-popup-content>
-        <img src="{{ asset('uploads/photos/' ~ project.imageByName('popup-large')) }}" popup-header-image />
+
+        <picture popup-header-image>
+            <source media="(min-width: 1367px)" srcset="{{ asset('uploads/photos/' ~ project.imageByName('popup-large')) }}" />
+            <source media="(min-width: 1000px) and (max-width: 1366)" srcset="{{ asset('uploads/photos/' ~ project.imageByName('popup-large')) }}" />
+            <source media="(min-width: 681px) and (max-width: 999px)" srcset="{{ asset('uploads/photos/' ~ project.imageByName('popup-medium')) }}" />
+            <source media="(min-width: 400px) and (max-width: 680px)" srcset="{{ asset('uploads/photos/' ~ project.imageByName('popup-small')) }}" />
+            <source media="(max-width: 400px)" srcset="{{ asset('uploads/photos/' ~ project.imageByName('popup-extra-small')) }}" />
+
+            <img src="{{ asset('uploads/photos/' ~ project.imageByName('popup-default')) }}" />
+        </picture>
+
         <div class="body">
             <h1 class="line-light">{{project.title}}</h1>
             {{ project.content|markdown }}

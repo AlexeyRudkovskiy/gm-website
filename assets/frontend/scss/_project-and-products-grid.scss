@@ -23,8 +23,11 @@
       position: relative;
       overflow: hidden;
 
-      img {
+      img, picture {
         vertical-align: middle;
+        max-width: 100%;
+        width: 100%;
+        object-fit: cover;
       }
 
       &::after {

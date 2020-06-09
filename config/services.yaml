@@ -47,7 +47,7 @@ services:
                 - { name: 'image-small', width: 210, height: 200, crop: 0, resize: 0, fit: 1 }
                 - { name: 'image-medium', width: 320, height: 200, crop: 0, resize: 0, fit: 1 }
                 - { name: 'image-large', width: 440, height: 250, crop: 0, resize: 0, fit: 1 }
-                - { name: 'image-large-smaller', width: 280, height: 250, crop: 0, resize: 0, fit: 1 }
+                - { name: 'image-large-smaller', width: 320, height: 250, crop: 0, resize: 0, fit: 1 }
                 - { name: 'post-small', width: 450, height: 285, crop: 0, resize: 0, fit: 1 }
                 - { name: 'post-tablet', width: 320, height: 412, crop: 0, resize: 0, fit: 1 }
                 - { name: 'post-mobile', width: 440, height: 200, crop: 0, resize: 0, fit: 1 }
@@ -57,6 +57,11 @@ services:
                 - { name: 'slider-tablet', width: 768, height: 550, crop: 0, resize: 0, fit: 1 }
                 - { name: 'slider-mobile', width: 480, height: 400, crop: 0, resize: 0, fit: 1 }
                 - { name: 'slider-large', width: 1920, height: 650, crop: 0, resize: 0, fit: 1 }
+                - { name: 'popup-default', width: 970, height: 392, crop: 0, resize: 0, fit: 1 }
+                - { name: 'popup-large', width: 700, height: 392, crop: 0, resize: 0, fit: 1 }
+                - { name: 'popup-medium', width: 600, height: 392, crop: 0, resize: 0, fit: 1 }
+                - { name: 'popup-small', width: 350, height: 259, crop: 0, resize: 0, fit: 1 }
+                - { name: 'popup-extra-small', width: 250, height: 236, crop: 0, resize: 0, fit: 1 }
 
     App\Services\DashboardService:
         shared: false

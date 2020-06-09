@@ -33,11 +33,6 @@ class StaticPage implements TranslatableInterface
      */
     private $photos = [];
 
-    /**
-     * @ORM\Column(type="boolean", nullable=true)
-     */
-    private $showInFooter = false;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -93,18 +88,6 @@ class StaticPage implements TranslatableInterface
         $content = explode(PHP_EOL, $this->getContent());
         $content = array_splice($content, 0, 4);
         return implode(PHP_EOL, $content);
-    }
-
-    public function getShowInFooter(): ?bool
-    {
-        return $this->showInFooter;
-    }
-
-    public function setShowInFooter(bool $showInFooter): self
-    {
-        $this->showInFooter = $showInFooter;
-
-        return $this;
     }
 
     public function __toString(): string

@@ -1,26 +1,32 @@
-<div class="grid-item" data-open-popup>
+<div class="grid-item" data-open-popup id="product-{{ product.id }}">
     <div class="image">
-        <img src="{{ asset('uploads/photos/' ~ product.imageByName('product-default')) }}"
-{#             srcset="{{ asset('uploads/photos/' ~ product.imageByName('product-default')) }},#}
-{#                    {{ asset('uploads/photos/' ~ product.imageByName('image-small')) }} 210w,#}
-{#                    {{ asset('uploads/photos/' ~ product.imageByName('image-medium')) }} 320w,#}
-{#                    {{ asset('uploads/photos/' ~ product.imageByName('image-large')) }} 440w,#}
-{#                    {{ asset('uploads/photos/' ~ product.imageByName('image-large-smaller')) }} 280w"#}
-{#             sizes="(max-width: 1366px) 270px,#}
-{#                        (max-width: 999px) 210px,#}
-{#                        (max-width: 767px) 320px,#}
-{#                        (max-width: 479px) 440px,#}
-{#                        (max-width: 320px) 280px,#}
-{#                        270px#}
-{#"#}
-        />
+
+        <picture>
+            <source media="(min-width: 1367px)" srcset="{{ asset('uploads/photos/' ~ product.imageByName('product-default')) }}" />
+            <source media="(min-width: 1000px) and (max-width: 1366)" srcset="{{ asset('uploads/photos/' ~ product.imageByName('image-small')) }}" />
+            <source media="(min-width: 681px) and (max-width: 999px)" srcset="{{ asset('uploads/photos/' ~ product.imageByName('image-medium')) }}" />
+            <source media="(min-width: 400px) and (max-width: 680px)" srcset="{{ asset('uploads/photos/' ~ product.imageByName('image-large')) }}" />
+            <source media="(max-width: 400px)" srcset="{{ asset('uploads/photos/' ~ product.imageByName('image-large-smaller')) }}" />
+
+            <img src="{{ asset('uploads/photos/' ~ product.imageByName('product-default')) }}" />
+        </picture>
     </div>
     <div class="content">
         <h2>{{product.title}}</h2>
         <p>{{product.description}}</p>
     </div>
     <div class="full-content" data-popup-content>
-        <img src="{{ asset('uploads/photos/' ~ product.imageByName('popup-large')) }}" popup-header-image />
+
+        <picture popup-header-image>
+            <source media="(min-width: 1367px)" srcset="{{ asset('uploads/photos/' ~ product.imageByName('popup-large')) }}" />
+            <source media="(min-width: 1000px) and (max-width: 1366)" srcset="{{ asset('uploads/photos/' ~ product.imageByName('popup-large')) }}" />
+            <source media="(min-width: 681px) and (max-width: 999px)" srcset="{{ asset('uploads/photos/' ~ product.imageByName('popup-medium')) }}" />
+            <source media="(min-width: 400px) and (max-width: 680px)" srcset="{{ asset('uploads/photos/' ~ product.imageByName('popup-small')) }}" />
+            <source media="(max-width: 400px)" srcset="{{ asset('uploads/photos/' ~ product.imageByName('popup-extra-small')) }}" />
+
+            <img src="{{ asset('uploads/photos/' ~ product.imageByName('popup-default')) }}" />
+        </picture>
+
         <div class="body">
             <h1 class="line-light">{{product.title}}</h1>
             {{ product.content|markdown }}

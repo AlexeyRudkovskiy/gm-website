@@ -16,7 +16,6 @@ class StaticPageType extends AbstractType
     {
         $builder
             ->add('slug')
-            ->add('showInFooter')
             ->add('photos', FileType::class, [
                 'multiple' => true,
                 'mapped' => false,

@@ -32,6 +32,11 @@ class Product implements TranslatableInterface
     private $image = [];
 
     /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $showInFooter = false;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -73,6 +78,24 @@ class Product implements TranslatableInterface
     public function getContent(): string
     {
         return $this->translate()->getContent();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShowInFooter()
+    {
+        return $this->showInFooter;
+    }
+
+    /**
+     * @param mixed $showInFooter
+     * @return Product
+     */
+    public function setShowInFooter($showInFooter)
+    {
+        $this->showInFooter = $showInFooter;
+        return $this;
     }
 
 }

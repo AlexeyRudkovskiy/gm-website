@@ -14,6 +14,12 @@
         const popup = document.querySelector('.popup-container');
         const popupContent = popup.querySelector('.popup-content .content');
         const popupClose = popup.querySelector('.popup-header .close-button');
+        const slider = document.querySelector('.header-image-wrapper');
+        const sliderImage = slider.querySelector('img');
+        const slidesJson = slider.getAttribute('data-images');
+        const slides = JSON.parse(slidesJson);
+        const totalSlides = slides.length;
+        let currentSlide = 0;
         let popupImage = popup.querySelector('.popup-header img');
 
         popupClose.addEventListener('click', () => {
@@ -44,9 +50,9 @@
                     const content = item.querySelector('[data-popup-content]');
                     const title = item.querySelector('.content h2').innerText;
                     const contentBody = content.querySelector('.body');
-                    const image = content.querySelector('img[popup-header-image]');
+                    const image = content.querySelector('[popup-header-image]');
 
-                    const newImage = image.cloneNode();
+                    const newImage = image.cloneNode(true);
 
                     document.body.classList.add('no-scroll');
 
@@ -58,6 +64,18 @@
                 });
             }
         }
+
+        window.setInterval(() => {
+            currentSlide++;
+            if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+
+            const defaultImage = 'slider-large';
+            const data = slides[currentSlide];
+
+            sliderImage.src = `/uploads/photos/${data[defaultImage]}`;
+        }, 1000);
     });
 
 })();

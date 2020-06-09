@@ -22,6 +22,23 @@ trait PhotosByName
         return $targetPhotos;
     }
 
+    public function getPhotosByNames(array $names): ?array
+    {
+        $photos = $this->getPhotos() ?? [ ];
+        $targetPhotos = [];
+        foreach ($photos as $photo) {
+            $temp = [];
+            foreach ($photo['files'] as $name => $data) {
+                if (in_array($name, $names)) {
+                    $temp[$name] = $data['filename'];
+                }
+            }
+            array_push($targetPhotos, $temp);
+        }
+
+        return $targetPhotos;
+    }
+
     public function getImageByName(string $name): ?string
     {
         $image = $this->getImage();

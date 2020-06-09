@@ -25,7 +25,7 @@
   @import "responsive-1000/popup";
 }
 
-@media screen and (max-width: 999px) and (min-width: 768px) {
+@media screen and (max-width: 999px) and (min-width: 681px) {
   @import "responsive-768/general";
   @import "responsive-768/header";
   @import "responsive-768/content-grid";
@@ -34,9 +34,10 @@
   @import "responsive-768/partners-grid";
   @import "responsive-768/contact-form";
   @import "responsive-768/footer";
+  @import "responsive-768/popup";
 }
 
-@media screen and (max-width: 767px) and (min-width: 480px) {
+@media screen and (max-width: 680px) and (min-width: 400px) {
   @import "responsive-480/general";
   @import "responsive-480/header";
   @import "responsive-480/content-grid";
@@ -47,9 +48,10 @@
   @import "responsive-480/map";
   @import "responsive-768/footer";
   @import "responsive-480/footer";
+  @import "responsive-480/popup";
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 400px) {
   @import "responsive-320/general";
   @import "responsive-320/header";
   @import "responsive-320/header-languages-dropdown";
@@ -59,4 +61,5 @@
   @import "responsive-320/contact-form";
   @import "responsive-320/map";
   @import "responsive-320/footer";
+  @import "responsive-320/popup";
 }

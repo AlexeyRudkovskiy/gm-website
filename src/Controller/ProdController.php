@@ -40,6 +40,7 @@ class ProdController extends AbstractController
         $secondBlock = $staticPageRepository->find($secondBlock);
 
         $slider = $staticPageRepository->findBySlug('slider');
+        $footerProducts = $productRepository->findFooterProducts();
 
         return $this->render('prod/index.html.twig', [
             'products' => $products,
@@ -48,7 +49,9 @@ class ProdController extends AbstractController
 
             'first_block' => $firstBlock,
             'second_block' => $secondBlock,
-            'slider' => $slider
+            'slider' => $slider,
+
+            'footer_products' => $footerProducts
         ]);
     }
 

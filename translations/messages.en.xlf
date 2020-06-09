@@ -433,6 +433,74 @@
         <source>Remember Me</source>
         <target>__Remember Me</target>
       </trans-unit>
+      <trans-unit id="t8ms5GG" resname="Products and services">
+        <source>Products and services</source>
+        <target>__Products and services</target>
+      </trans-unit>
+      <trans-unit id="H8PIDAa" resname="Our Projects">
+        <source>Our Projects</source>
+        <target>__Our Projects</target>
+      </trans-unit>
+      <trans-unit id="inh74j8" resname="Our Partners">
+        <source>Our Partners</source>
+        <target>__Our Partners</target>
+      </trans-unit>
+      <trans-unit id="tFBkXev" resname="Contacts">
+        <source>Contacts</source>
+        <target>__Contacts</target>
+      </trans-unit>
+      <trans-unit id="9bVOdOq" resname="Products and Services">
+        <source>Products and Services</source>
+        <target>__Products and Services</target>
+      </trans-unit>
+      <trans-unit id="deS2Gqu" resname="Have questions?">
+        <source>Have questions?</source>
+        <target>__Have questions?</target>
+      </trans-unit>
+      <trans-unit id="3NHVIj9" resname="Name">
+        <source>Name</source>
+        <target>__Name</target>
+      </trans-unit>
+      <trans-unit id="Y9zriAC" resname="Phone">
+        <source>Phone</source>
+        <target>__Phone</target>
+      </trans-unit>
+      <trans-unit id="9vRoj.I" resname="Send">
+        <source>Send</source>
+        <target>__Send</target>
+      </trans-unit>
+      <trans-unit id="z7ww.3O" resname="Our Products">
+        <source>Our Products</source>
+        <target>__Our Products</target>
+      </trans-unit>
+      <trans-unit id="CcKJ0jG" resname="Subscribe header">
+        <source>Subscribe header</source>
+        <target>__Subscribe header</target>
+      </trans-unit>
+      <trans-unit id="XTycmwV" resname="Your E-Mail">
+        <source>Your E-Mail</source>
+        <target>__Your E-Mail</target>
+      </trans-unit>
+      <trans-unit id="zA442px" resname="Subscribe">
+        <source>Subscribe</source>
+        <target>__Subscribe</target>
+      </trans-unit>
+      <trans-unit id="YCS.Nmz" resname="By clicking the &quot;Subscribe&quot; button you agree to">
+        <source>By clicking the "Subscribe" button you agree to</source>
+        <target>__By clicking the "Subscribe" button you agree to</target>
+      </trans-unit>
+      <trans-unit id="65HfLqD" resname="Website Rules">
+        <source>Website Rules</source>
+        <target>__Website Rules</target>
+      </trans-unit>
+      <trans-unit id="YgERG4O" resname="and">
+        <source>and</source>
+        <target>__and</target>
+      </trans-unit>
+      <trans-unit id="Dq.OqvJ" resname="Portal Privacy Policy">
+        <source>Portal Privacy Policy</source>
+        <target>__Portal Privacy Policy</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

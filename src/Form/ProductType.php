@@ -20,6 +20,7 @@ class ProductType extends AbstractType
                 'mapped' => false,
                 'required' => false
             ])
+            ->add('showInFooter')
             ->add('translations', TranslationsType::class, [
                 'fields' => [
                     'description' => [
