@@ -30,6 +30,14 @@ class ProjectRepository extends ServiceEntityRepository
         return $paginator->paginate($query, $request->query->getInt('page', 1), 10);
     }
 
+    public function findOrdered()
+    {
+        return $this->createQueryBuilder('project')
+            ->orderBy('project.orderIndex', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Project[] Returns an array of Project objects
     //  */

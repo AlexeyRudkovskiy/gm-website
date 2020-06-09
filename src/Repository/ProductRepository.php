@@ -25,6 +25,7 @@ class ProductRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('p')
             ->where('p.showInFooter = :bool')
+            ->orderBy('p.orderIndex', 'DESC')
             ->setParameter('bool', true)
             ->getQuery()
             ->getResult();
@@ -37,6 +38,14 @@ class ProductRepository extends ServiceEntityRepository
             ->getQuery();
 
         return $paginator->paginate($query, $request->query->getInt('page', 1), 10);
+    }
+
+    public function findOrdered()
+    {
+        return $this->createQueryBuilder('product')
+            ->orderBy('product.orderIndex', 'DESC')
+            ->getQuery()
+            ->getResult();
     }
 
     // /**

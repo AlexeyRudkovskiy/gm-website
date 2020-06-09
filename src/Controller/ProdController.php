@@ -29,9 +29,9 @@ class ProdController extends AbstractController
         StaticPageRepository $staticPageRepository
     )
     {
-        $products = $productRepository->findAll();
-        $projects = $projectRepository->findAll();
-        $partners = $partnerRepository->findAll();
+        $products = $productRepository->findOrdered();
+        $projects = $projectRepository->findOrdered();
+        $partners = $partnerRepository->findOrdered();
 
         $firstBlock = $dashboardService->getSetting('firstBlock');
         $secondBlock = $dashboardService->getSetting('secondBlock');

@@ -30,6 +30,14 @@ class PartnerRepository extends ServiceEntityRepository
         return $paginator->paginate($query, $request->query->getInt('page', 1), 10);
     }
 
+    public function findOrdered()
+    {
+        return $this->createQueryBuilder('partner')
+            ->orderBy('partner.orderIndex', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Partner[] Returns an array of Partner objects
     //  */
