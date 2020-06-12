@@ -15,9 +15,10 @@ import tabs from './tabs'
 import gallery from "./gallery";
 import singlePhoto from './single-photo'
 import simplemde from './simplemde'
+import imageEditor from './image-editor'
 
 (() => {
-    const functions = [ tabs, gallery, singlePhoto, simplemde ];
+    const functions = [ tabs, gallery, singlePhoto, simplemde, imageEditor ];
 
     window.addEventListener('load', () => {
 

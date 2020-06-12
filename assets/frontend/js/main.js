@@ -87,9 +87,9 @@ import axios from 'axios'
             const data = slides[currentSlide];
 
             const template = `<source media="(min-width: 1367px)" srcset="${getImageUrl(data['slider-large'])}" />
-                    <source media="(min-width: 1000px) and (max-width: 1366)" srcset="${getImageUrl(data['slider-large'])}" />
-                    <source media="(min-width: 681px) and (max-width: 999px)" srcset="${getImageUrl(data['slider-small'])}" />
-                    <source media="(min-width: 400px) and (max-width: 680px)" srcset="${getImageUrl(data['slider-tablet'])}" />
+                    <source media="(min-width: 1001px) and (max-width: 1366)" srcset="${getImageUrl(data['slider-default'])}" />
+                    <source media="(min-width: 681px) and (max-width: 1000px)" srcset="${getImageUrl(data['slider-small'])}" />
+                    <source media="(min-width: 400px) and (max-width: 999px)" srcset="${getImageUrl(data['slider-tablet'])}" />
                     <source media="(max-width: 400px)" srcset="${getImageUrl(data['slider-mobile'])}" />
                     <img src="${getImageUrl(data['slider-default'])}" />`;
 

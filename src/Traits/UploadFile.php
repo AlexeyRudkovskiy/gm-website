@@ -46,11 +46,19 @@ trait UploadFile
                 ];
             }
 
+            $original = $photosService->getImageManager()->make($originalsDirectory . '/' . $originalFilename);
+
+            $width = $original->width();
+            $height = $original->height();
+
             $response = [
                 'files' => $photos,
                 'original' => [
                     'directory' => $originalsDirectory,
-                    'filename' => $originalFilename
+                    'filename' => $originalFilename,
+                    'width' => $width,
+                    'height' => $height,
+                    'aspect_ratio' => $width / $height
                 ]
             ];
 
@@ -90,12 +98,20 @@ trait UploadFile
                 ];
             }
 
+            $original = $photosService->getImageManager()->make($originalsDirectory . '/' . $originalFilename);
+
+            $width = $original->width();
+            $height = $original->height();
+
 //            $photos['@original'] = $originalsDirectory . '/' . $originalFilename;
             array_push($uploadedPhotos, [
                 'files' => $photos,
                 'original' => [
                     'directory' => $originalsDirectory,
-                    'filename' => $originalFilename
+                    'filename' => $originalFilename,
+                    'width' => $width,
+                    'height' => $height,
+                    'aspect_ratio' => $width / $height
                 ]
             ]);
         }

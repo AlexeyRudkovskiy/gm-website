@@ -65,4 +65,17 @@ class PhotosService
         return $uploadedPhotos;
     }
 
+    public function getSizes()
+    {
+        return $this->sizes;
+    }
+
+    /**
+     * @return ImageManager
+     */
+    public function getImageManager(): ImageManager
+    {
+        return $this->imageManager;
+    }
+
 }

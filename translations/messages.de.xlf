@@ -7,511 +7,511 @@
     <body>
       <trans-unit id="47ienTP" resname="Username">
         <source>Username</source>
-        <target>__Username</target>
+        <target>Username</target>
       </trans-unit>
       <trans-unit id="588_9PF" resname="Password">
         <source>Password</source>
-        <target>__Password</target>
+        <target>Password</target>
       </trans-unit>
       <trans-unit id="wlM3BVR" resname="Roles">
         <source>Roles</source>
-        <target>__Roles</target>
+        <target>Roles</target>
       </trans-unit>
       <trans-unit id="f9s8zsD" resname="Entities">
         <source>Entities</source>
-        <target>__Entities</target>
+        <target>Entities</target>
       </trans-unit>
       <trans-unit id="TtyL_vx" resname="Products">
         <source>Products</source>
-        <target>__Products</target>
+        <target>Products</target>
       </trans-unit>
       <trans-unit id="BOKpcor" resname="Projects">
         <source>Projects</source>
-        <target>__Projects</target>
+        <target>Projects</target>
       </trans-unit>
       <trans-unit id="XatQK.u" resname="Partners">
         <source>Partners</source>
-        <target>__Partners</target>
+        <target>Partners</target>
       </trans-unit>
       <trans-unit id="CfSFamv" resname="Contact Requests">
         <source>Contact Requests</source>
-        <target>__Contact Requests</target>
+        <target>Contact Requests</target>
       </trans-unit>
       <trans-unit id="dKiDoDe" resname="Settings">
         <source>Settings</source>
-        <target>__Settings</target>
+        <target>Settings</target>
       </trans-unit>
       <trans-unit id="z4RY4s1" resname="Meta Tags">
         <source>Meta Tags</source>
-        <target>__Meta Tags</target>
+        <target>Meta Tags</target>
       </trans-unit>
       <trans-unit id="izMJ7US" resname="Static Pages">
         <source>Static Pages</source>
-        <target>__Static Pages</target>
+        <target>Static Pages</target>
       </trans-unit>
       <trans-unit id="awzJBNC" resname="Users">
         <source>Users</source>
-        <target>__Users</target>
+        <target>Users</target>
       </trans-unit>
       <trans-unit id="ymFxK5V" resname="Message was sent successfully">
         <source>Message was sent successfully</source>
-        <target>__Message was sent successfully</target>
+        <target>Message was sent successfully</target>
       </trans-unit>
       <trans-unit id="obHF7P4" resname="Partner successfully created">
         <source>Partner successfully created</source>
-        <target>__Partner successfully created</target>
+        <target>Partner successfully created</target>
       </trans-unit>
       <trans-unit id="VpxCIeF" resname="Partner successfully updated">
         <source>Partner successfully updated</source>
-        <target>__Partner successfully updated</target>
+        <target>Partner successfully updated</target>
       </trans-unit>
       <trans-unit id=".5IW98c" resname="Product successfully created">
         <source>Product successfully created</source>
-        <target>__Product successfully created</target>
+        <target>Product successfully created</target>
       </trans-unit>
       <trans-unit id="DvvKn1l" resname="Product successfully updated">
         <source>Product successfully updated</source>
-        <target>__Product successfully updated</target>
+        <target>Product successfully updated</target>
       </trans-unit>
       <trans-unit id="YUaQ_t5" resname="Project successfully created">
         <source>Project successfully created</source>
-        <target>__Project successfully created</target>
+        <target>Project successfully created</target>
       </trans-unit>
       <trans-unit id="VxXvQbp" resname="Project successfully updated">
         <source>Project successfully updated</source>
-        <target>__Project successfully updated</target>
+        <target>Project successfully updated</target>
       </trans-unit>
       <trans-unit id="giMaaA0" resname="Static page successfully created">
         <source>Static page successfully created</source>
-        <target>__Static page successfully created</target>
+        <target>Static page successfully created</target>
       </trans-unit>
       <trans-unit id="EPCcvV0" resname="Static page successfully updated">
         <source>Static page successfully updated</source>
-        <target>__Static page successfully updated</target>
+        <target>Static page successfully updated</target>
       </trans-unit>
       <trans-unit id="FQn1YfJ" resname="Save">
         <source>Save</source>
-        <target>__Save</target>
+        <target>Save</target>
       </trans-unit>
       <trans-unit id="e.cKar_" resname="Home :: Dashboard">
         <source>Home :: Dashboard</source>
-        <target>__Home :: Dashboard</target>
+        <target>Home :: Dashboard</target>
       </trans-unit>
       <trans-unit id="t8ms5GG" resname="Products and services">
         <source>Products and services</source>
-        <target>__Products and services</target>
+        <target>Produkte und Dienstleistungen</target>
       </trans-unit>
       <trans-unit id="H8PIDAa" resname="Our Projects">
         <source>Our Projects</source>
-        <target>__Our Projects</target>
+        <target>Unsere Projekte</target>
       </trans-unit>
       <trans-unit id="inh74j8" resname="Our Partners">
         <source>Our Partners</source>
-        <target>__Our Partners</target>
+        <target>Unsere Partner</target>
       </trans-unit>
       <trans-unit id="tFBkXev" resname="Contacts">
         <source>Contacts</source>
-        <target>__Contacts</target>
+        <target>Kontakte</target>
       </trans-unit>
       <trans-unit id="9bVOdOq" resname="Products and Services">
         <source>Products and Services</source>
-        <target>__Products and Services</target>
+        <target>Produkte und Dienstleistungen</target>
       </trans-unit>
       <trans-unit id="deS2Gqu" resname="Have questions?">
         <source>Have questions?</source>
-        <target>__Have questions?</target>
+        <target>Habe Fragen?</target>
       </trans-unit>
       <trans-unit id="jgDN9x_" resname="Full Name">
         <source>Full Name</source>
-        <target>__Full Name</target>
+        <target>Vollständiger Namee</target>
       </trans-unit>
       <trans-unit id="Y9zriAC" resname="Phone">
         <source>Phone</source>
-        <target>__Phone</target>
+        <target>Telefon</target>
       </trans-unit>
       <trans-unit id="L65vsws" resname="E-Mail">
         <source>E-Mail</source>
-        <target>__E-Mail</target>
+        <target>E-Mail</target>
       </trans-unit>
       <trans-unit id="KJr.ErB" resname="Question">
         <source>Question</source>
-        <target>__Question</target>
+        <target>Frage</target>
       </trans-unit>
       <trans-unit id="9vRoj.I" resname="Send">
         <source>Send</source>
-        <target>__Send</target>
+        <target>Senden</target>
       </trans-unit>
       <trans-unit id="dnpmeip" resname="Tel:">
         <source>Tel:</source>
-        <target>__Tel:</target>
+        <target>Tel:</target>
       </trans-unit>
       <trans-unit id="iWXRrJf" resname="Fax:">
         <source>Fax:</source>
-        <target>__Fax:</target>
+        <target>Fax:</target>
       </trans-unit>
       <trans-unit id="7zTZPzG" resname="E-Mail:">
         <source>E-Mail:</source>
-        <target>__E-Mail:</target>
+        <target>E-Mail:</target>
       </trans-unit>
       <trans-unit id="z7ww.3O" resname="Our Products">
         <source>Our Products</source>
-        <target>__Our Products</target>
+        <target>Unsere Produkte</target>
       </trans-unit>
       <trans-unit id="sNQKSrI" resname="Contact Requests :: Dashboard">
         <source>Contact Requests :: Dashboard</source>
-        <target>__Contact Requests :: Dashboard</target>
+        <target>Contact Requests :: Dashboard</target>
       </trans-unit>
       <trans-unit id="OEOXHc." resname="ID">
         <source>ID</source>
-        <target>__ID</target>
+        <target>ID</target>
       </trans-unit>
       <trans-unit id="kg5BPH1" resname="Status">
         <source>Status</source>
-        <target>__Status</target>
+        <target>Status</target>
       </trans-unit>
       <trans-unit id=".4BZ3Gd" resname="Actions">
         <source>Actions</source>
-        <target>__Actions</target>
+        <target>Actions</target>
       </trans-unit>
       <trans-unit id="DfbxytN" resname="Show">
         <source>Show</source>
-        <target>__Show</target>
+        <target>Show</target>
       </trans-unit>
       <trans-unit id="EHDJsuB" resname="Can't find any contact request">
         <source>Can't find any contact request</source>
-        <target>__Can't find any contact request</target>
+        <target>Can't find any contact request</target>
       </trans-unit>
       <trans-unit id="bOl.Mbw" resname="Contact Request :: Dashboard">
         <source>Contact Request :: Dashboard</source>
-        <target>__Contact Request :: Dashboard</target>
+        <target>Contact Request :: Dashboard</target>
       </trans-unit>
       <trans-unit id="tzU9Rat" resname="Contact Request">
         <source>Contact Request</source>
-        <target>__Contact Request</target>
+        <target>Contact Request</target>
       </trans-unit>
       <trans-unit id="ctupru2" resname="Phone Number">
         <source>Phone Number</source>
-        <target>__Phone Number</target>
+        <target>Phone Number</target>
       </trans-unit>
       <trans-unit id="8X9Zsqy" resname="Mark as completed">
         <source>Mark as completed</source>
-        <target>__Mark as completed</target>
+        <target>Mark as completed</target>
       </trans-unit>
       <trans-unit id="gp_CVmD" resname="Dashboard :: Dashboard">
         <source>Dashboard :: Dashboard</source>
-        <target>__Dashboard :: Dashboard</target>
+        <target>Dashboard :: Dashboard</target>
       </trans-unit>
       <trans-unit id="AyjuCgn" resname="Editing Meta Tags :: Dashboard">
         <source>Editing Meta Tags :: Dashboard</source>
-        <target>__Editing Meta Tags :: Dashboard</target>
+        <target>Editing Meta Tags :: Dashboard</target>
       </trans-unit>
       <trans-unit id="E5eySh3" resname="Editing Meta Tags">
         <source>Editing Meta Tags</source>
-        <target>__Editing Meta Tags</target>
+        <target>Editing Meta Tags</target>
       </trans-unit>
       <trans-unit id="Eh9KJPd" resname="Meta Tags :: Dashboard">
         <source>Meta Tags :: Dashboard</source>
-        <target>__Meta Tags :: Dashboard</target>
+        <target>Meta Tags :: Dashboard</target>
       </trans-unit>
       <trans-unit id="56JB3rr" resname="URL">
         <source>URL</source>
-        <target>__URL</target>
+        <target>URL</target>
       </trans-unit>
       <trans-unit id="RkxP.QG" resname="Edit">
         <source>Edit</source>
-        <target>__Edit</target>
+        <target>Edit</target>
       </trans-unit>
       <trans-unit id="3NTkz3o" resname="Can't find any page with meta tags">
         <source>Can't find any page with meta tags</source>
-        <target>__Can't find any page with meta tags</target>
+        <target>Can't find any page with meta tags</target>
       </trans-unit>
       <trans-unit id="b6DcFej" resname="Create first?">
         <source>Create first?</source>
-        <target>__Create first?</target>
+        <target>Create first?</target>
       </trans-unit>
       <trans-unit id="8qUDcdI" resname="Create new page">
         <source>Create new page</source>
-        <target>__Create new page</target>
+        <target>Create new page</target>
       </trans-unit>
       <trans-unit id="uUuanDg" resname="New page with meta tags :: Dashboard">
         <source>New page with meta tags :: Dashboard</source>
-        <target>__New page with meta tags :: Dashboard</target>
+        <target>New page with meta tags :: Dashboard</target>
       </trans-unit>
       <trans-unit id="QmnYYfw" resname="Create a new page with meta tags">
         <source>Create a new page with meta tags</source>
-        <target>__Create a new page with meta tags</target>
+        <target>Create a new page with meta tags</target>
       </trans-unit>
       <trans-unit id="aEZcQYF" resname="Page Meta Tags :: Dashboard">
         <source>Page Meta Tags :: Dashboard</source>
-        <target>__Page Meta Tags :: Dashboard</target>
+        <target>Page Meta Tags :: Dashboard</target>
       </trans-unit>
       <trans-unit id="b23LBpR" resname="Page Meta Tags">
         <source>Page Meta Tags</source>
-        <target>__Page Meta Tags</target>
+        <target>Page Meta Tags</target>
       </trans-unit>
       <trans-unit id="kayN18P" resname="Page Title">
         <source>Page Title</source>
-        <target>__Page Title</target>
+        <target>Page Title</target>
       </trans-unit>
       <trans-unit id="JZiEAlp" resname="Meta Tags:">
         <source>Meta Tags:</source>
-        <target>__Meta Tags:</target>
+        <target>Meta Tags:</target>
       </trans-unit>
       <trans-unit id="REE8PZe" resname="Are you sure you want to delete this item?">
         <source>Are you sure you want to delete this item?</source>
-        <target>__Are you sure you want to delete this item?</target>
+        <target>Are you sure you want to delete this item?</target>
       </trans-unit>
       <trans-unit id="4tClSWj" resname="Delete">
         <source>Delete</source>
-        <target>__Delete</target>
+        <target>Delete</target>
       </trans-unit>
       <trans-unit id="n9coxmy" resname="Add">
         <source>Add</source>
-        <target>__Add</target>
+        <target>Add</target>
       </trans-unit>
       <trans-unit id="b6w25l5" resname="Delete Photo">
         <source>Delete Photo</source>
-        <target>__Delete Photo</target>
+        <target>Delete Photo</target>
       </trans-unit>
       <trans-unit id="SeSbtEA" resname="Generate">
         <source>Generate</source>
-        <target>__Generate</target>
+        <target>Generate</target>
       </trans-unit>
       <trans-unit id="FlEDG.W" resname="Regenerate">
         <source>Regenerate</source>
-        <target>__Regenerate</target>
+        <target>Regenerate</target>
       </trans-unit>
       <trans-unit id="3V2IVeG" resname="Editing Partner :: Dashboard">
         <source>Editing Partner :: Dashboard</source>
-        <target>__Editing Partner :: Dashboard</target>
+        <target>Editing Partner :: Dashboard</target>
       </trans-unit>
       <trans-unit id="7K6fM7Y" resname="Edit Partner">
         <source>Edit Partner</source>
-        <target>__Edit Partner</target>
+        <target>Edit Partner</target>
       </trans-unit>
       <trans-unit id="hnfHN6f" resname="Partners :: Dashboard">
         <source>Partners :: Dashboard</source>
-        <target>__Partners :: Dashboard</target>
+        <target>Partners :: Dashboard</target>
       </trans-unit>
       <trans-unit id="fozSBW2" resname="Title">
         <source>Title</source>
-        <target>__Title</target>
+        <target>Title</target>
       </trans-unit>
       <trans-unit id="E.uSpgU" resname="Create new partner">
         <source>Create new partner</source>
-        <target>__Create new partner</target>
+        <target>Create new partner</target>
       </trans-unit>
       <trans-unit id="5sKJ4sC" resname="Can not find any partner">
         <source>Can not find any partner</source>
-        <target>__Can not find any partner</target>
+        <target>Can not find any partner</target>
       </trans-unit>
       <trans-unit id="b8Cut9u" resname="Create a Partner :: Dashboard">
         <source>Create a Partner :: Dashboard</source>
-        <target>__Create a Partner :: Dashboard</target>
+        <target>Create a Partner :: Dashboard</target>
       </trans-unit>
       <trans-unit id="JPIuY6V" resname="Creating a Partner">
         <source>Creating a Partner</source>
-        <target>__Creating a Partner</target>
+        <target>Creating a Partner</target>
       </trans-unit>
       <trans-unit id="GqTLC8y" resname="Image">
         <source>Image</source>
-        <target>__Image</target>
+        <target>Image</target>
       </trans-unit>
       <trans-unit id="yq9oQvd" resname="Edit Product">
         <source>Edit Product</source>
-        <target>__Edit Product</target>
+        <target>Edit Product</target>
       </trans-unit>
       <trans-unit id="EhVukhv" resname="Id">
         <source>Id</source>
-        <target>__Id</target>
+        <target>Id</target>
       </trans-unit>
       <trans-unit id="IbKPdm1" resname="create new product">
         <source>create new product</source>
-        <target>__create new product</target>
+        <target>create new product</target>
       </trans-unit>
       <trans-unit id="JzAiboz" resname="Can not find any product">
         <source>Can not find any product</source>
-        <target>__Can not find any product</target>
+        <target>Can not find any product</target>
       </trans-unit>
       <trans-unit id="csYIwH6" resname="Editing Product :: Dashboard">
         <source>Editing Product :: Dashboard</source>
-        <target>__Editing Product :: Dashboard</target>
+        <target>Editing Product :: Dashboard</target>
       </trans-unit>
       <trans-unit id="xGLeTFY" resname="Create new Product">
         <source>Create new Product</source>
-        <target>__Create new Product</target>
+        <target>Create new Product</target>
       </trans-unit>
       <trans-unit id="Ooc8yWU" resname="Dashboard :: Product">
         <source>Dashboard :: Product</source>
-        <target>__Dashboard :: Product</target>
+        <target>Dashboard :: Product</target>
       </trans-unit>
       <trans-unit id="_574lBd" resname="Product">
         <source>Product</source>
-        <target>__Product</target>
+        <target>Product</target>
       </trans-unit>
       <trans-unit id="Um4Ah8w" resname="Description">
         <source>Description</source>
-        <target>__Description</target>
+        <target>Description</target>
       </trans-unit>
       <trans-unit id="_muH8tO" resname="Editing Project :: Dashboard">
         <source>Editing Project :: Dashboard</source>
-        <target>__Editing Project :: Dashboard</target>
+        <target>Editing Project :: Dashboard</target>
       </trans-unit>
       <trans-unit id="9HQ05MK" resname="Edit Project">
         <source>Edit Project</source>
-        <target>__Edit Project</target>
+        <target>Edit Project</target>
       </trans-unit>
       <trans-unit id="y6OZTkP" resname="Projects :: Dashboard">
         <source>Projects :: Dashboard</source>
-        <target>__Projects :: Dashboard</target>
+        <target>Projects :: Dashboard</target>
       </trans-unit>
       <trans-unit id="PekI3Q." resname="Create new project">
         <source>Create new project</source>
-        <target>__Create new project</target>
+        <target>Create new project</target>
       </trans-unit>
       <trans-unit id="0xcfnmP" resname="Can not find any project">
         <source>Can not find any project</source>
-        <target>__Can not find any project</target>
+        <target>Can not find any project</target>
       </trans-unit>
       <trans-unit id="GVSl3tG" resname="Creating new Project :: Dashboard">
         <source>Creating new Project :: Dashboard</source>
-        <target>__Creating new Project :: Dashboard</target>
+        <target>Creating new Project :: Dashboard</target>
       </trans-unit>
       <trans-unit id="NmPA.AZ" resname="Create new Project">
         <source>Create new Project</source>
-        <target>__Create new Project</target>
+        <target>Create new Project</target>
       </trans-unit>
       <trans-unit id="R70pB1_" resname="Content">
         <source>Content</source>
-        <target>__Content</target>
+        <target>Content</target>
       </trans-unit>
       <trans-unit id="1GJ4qLC" resname="Settings :: Dashboard">
         <source>Settings :: Dashboard</source>
-        <target>__Settings :: Dashboard</target>
+        <target>Settings :: Dashboard</target>
       </trans-unit>
       <trans-unit id="xqFrlj_" resname="Editing static page :: Dashboard">
         <source>Editing static page :: Dashboard</source>
-        <target>__Editing static page :: Dashboard</target>
+        <target>Editing static page :: Dashboard</target>
       </trans-unit>
       <trans-unit id="WMgkAlj" resname="Editing static page">
         <source>Editing static page</source>
-        <target>__Editing static page</target>
+        <target>Editing static page</target>
       </trans-unit>
       <trans-unit id="GDwO_TA" resname="Static Pages :: Dashboard">
         <source>Static Pages :: Dashboard</source>
-        <target>__Static Pages :: Dashboard</target>
+        <target>Static Pages :: Dashboard</target>
       </trans-unit>
       <trans-unit id="ymrr3Ae" resname="Can't find any static page">
         <source>Can't find any static page</source>
-        <target>__Can't find any static page</target>
+        <target>Can't find any static page</target>
       </trans-unit>
       <trans-unit id="c8Yw6I5" resname="Create new static page">
         <source>Create new static page</source>
-        <target>__Create new static page</target>
+        <target>Create new static page</target>
       </trans-unit>
       <trans-unit id="ISKS2hA" resname="New static page :: Dashboard">
         <source>New static page :: Dashboard</source>
-        <target>__New static page :: Dashboard</target>
+        <target>New static page :: Dashboard</target>
       </trans-unit>
       <trans-unit id="YhqVlth" resname="Creating new static page">
         <source>Creating new static page</source>
-        <target>__Creating new static page</target>
+        <target>Creating new static page</target>
       </trans-unit>
       <trans-unit id="rHNjJLt" resname="Static page - %name% :: Dashboard">
         <source>Static page - %name% :: Dashboard</source>
-        <target>__Static page - %name% :: Dashboard</target>
+        <target>Static page - %name% :: Dashboard</target>
       </trans-unit>
       <trans-unit id="ReGPWya" resname="Static page">
         <source>Static page</source>
-        <target>__Static page</target>
+        <target>Static page</target>
       </trans-unit>
       <trans-unit id="0VOH7Mb" resname="Slug">
         <source>Slug</source>
-        <target>__Slug</target>
+        <target>Slug</target>
       </trans-unit>
       <trans-unit id="XjFHq1H" resname="Photos">
         <source>Photos</source>
-        <target>__Photos</target>
+        <target>Photos</target>
       </trans-unit>
       <trans-unit id="s87qDxA" resname="Editing User :: Dashboard">
         <source>Editing User :: Dashboard</source>
-        <target>__Editing User :: Dashboard</target>
+        <target>Editing User :: Dashboard</target>
       </trans-unit>
       <trans-unit id="4eV8wQ4" resname="Users :: Dashboard">
         <source>Users :: Dashboard</source>
-        <target>__Users :: Dashboard</target>
+        <target>Users :: Dashboard</target>
       </trans-unit>
       <trans-unit id="zn_owhE" resname="Can't find any user">
         <source>Can't find any user</source>
-        <target>__Can't find any user</target>
+        <target>Can't find any user</target>
       </trans-unit>
       <trans-unit id="B7YZhA2" resname="Create first user?">
         <source>Create first user?</source>
-        <target>__Create first user?</target>
+        <target>Create first user?</target>
       </trans-unit>
       <trans-unit id="8G2hKMN" resname="Create user">
         <source>Create user</source>
-        <target>__Create user</target>
+        <target>Create user</target>
       </trans-unit>
       <trans-unit id="bFQWXNG" resname="Creating an User :: Dashboard">
         <source>Creating an User :: Dashboard</source>
-        <target>__Creating an User :: Dashboard</target>
+        <target>Creating an User :: Dashboard</target>
       </trans-unit>
       <trans-unit id="FOltWp9" resname="User - %username% :: Dashboard">
         <source>User - %username% :: Dashboard</source>
-        <target>__User - %username% :: Dashboard</target>
+        <target>User - %username% :: Dashboard</target>
       </trans-unit>
       <trans-unit id="IbGfRkr" resname="Do you want to delete this user?">
         <source>Do you want to delete this user?</source>
-        <target>__Do you want to delete this user?</target>
+        <target>Do you want to delete this user?</target>
       </trans-unit>
       <trans-unit id="_raBEyb" resname="Ordered Tour">
         <source>Ordered Tour</source>
-        <target>__Ordered Tour</target>
+        <target>Ordered Tour</target>
       </trans-unit>
       <trans-unit id="QDzCFQL" resname="Wishes">
         <source>Wishes</source>
-        <target>__Wishes</target>
+        <target>Wishes</target>
       </trans-unit>
       <trans-unit id="8bW__GX" resname="Address Wishes">
         <source>Address Wishes</source>
-        <target>__Address Wishes</target>
+        <target>Address Wishes</target>
       </trans-unit>
       <trans-unit id="zU0BS.m" resname="Address Price">
         <source>Address Price</source>
-        <target>__Address Price</target>
+        <target>Address Price</target>
       </trans-unit>
       <trans-unit id="hgZfvrR" resname="Date and Time">
         <source>Date and Time</source>
-        <target>__Date and Time</target>
+        <target>Date and Time</target>
       </trans-unit>
       <trans-unit id="pc3wfbv" resname="Car">
         <source>Car</source>
-        <target>__Car</target>
+        <target>Car</target>
       </trans-unit>
       <trans-unit id="5TEGvFz" resname="Wine Tours">
         <source>Wine Tours</source>
-        <target>__Wine Tours</target>
+        <target>Wine Tours</target>
       </trans-unit>
       <trans-unit id="wq2xtoQ" resname="Sign-In">
         <source>Sign-In</source>
-        <target>__Sign-In</target>
+        <target>Sign-In</target>
       </trans-unit>
       <trans-unit id="vhPM4Ab" resname="You are logged in as %username%">
         <source>You are logged in as %username%</source>
-        <target>__You are logged in as %username%</target>
+        <target>You are logged in as %username%</target>
       </trans-unit>
       <trans-unit id="0FJ_Sz1" resname="Logout">
         <source>Logout</source>
-        <target>__Logout</target>
+        <target>Logout</target>
       </trans-unit>
       <trans-unit id="tFWZTvI" resname="Sign-In to your account">
         <source>Sign-In to your account</source>
-        <target>__Sign-In to your account</target>
+        <target>Sign-In to your account</target>
       </trans-unit>
       <trans-unit id="KpL2_.m" resname="Remember Me">
         <source>Remember Me</source>
-        <target>__Remember Me</target>
+        <target>Remember Me</target>
       </trans-unit>
     </body>
   </file>
