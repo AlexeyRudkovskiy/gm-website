@@ -34,6 +34,12 @@ class Partner implements TranslatableInterface
      */
     private $orderIndex = 1;
 
+    /**
+     * @var
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $url;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +80,22 @@ class Partner implements TranslatableInterface
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
 
+    /**
+     * @param mixed $url
+     * @return Partner
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+        return $this;
+    }
 
 }
