@@ -27,11 +27,12 @@
                 <th>{{'Photos'|trans}}</th>
                 <td>
                     <div class="photos-preview" id="photos-previews">
-                        {% for photo in static_page.photosByName('admin-preview') %}
+                        {% for photo in static_page.photos %}
                             <div class="single-photo" data-index="{{ loop.index - 1 }}">
-                                <img src="{{ asset('uploads/photos/' ~ photo) }}" />
+                                <img src="{{ asset('uploads/photos/' ~ photo.files['admin-preview'].filename) }}" />
                                 <a href="javascript:" data-index="{{ loop.index - 1 }}" class="button button-small delete-image">{{ 'Delete Photo' | trans }}</a>
                                 <a href="javascript:" data-index="{{ loop.index - 1 }}" class="button button-small generate-image">{{ 'Generate' | trans }}</a>
+                                <a href="javascript:" class="button button-small edit-photo" data-photo="{{ photo | json_encode }}">{{ 'Edit Photo' | trans }}</a>
                             </div>
                         {% endfor %}
                         <div class="updating-overlay"></div>

@@ -52,4 +52,16 @@ trait PhotosByName
         return $file['filename'];
     }
 
+    public function getOriginalPhoto()
+    {
+        $original = $this->image['original'];
+
+        return [
+            'filename' => $original['filename'],
+            'width' => $original['width'],
+            'height' => $original['height'],
+            'aspect_ratio' => $original['aspect_ratio']
+        ];
+    }
+
 }

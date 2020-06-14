@@ -65,6 +65,35 @@ class PhotosService
         return $uploadedPhotos;
     }
 
+    public function genOne($width, $height, $top, $left, $scale, $filename, $owidth, $oheight)
+    {
+    }
+
+    public function regenerate(array $originalFiles, array $update, $original)
+    {
+        $oheight = $original['height'];
+        $owidth = $original['width'];
+        $filename = $original['filename'];
+
+        foreach ($update as $name => $data) {
+            $target = $originalFiles[$name];
+
+            $scale = $data['scale'];
+            $width = $data['width'];
+            $height = $data['height'];
+            $top = $data['top'];
+            $left = $data['left'];
+
+            $file = $this->imageManager->make('/mnt/g/Projects/PhpStormProjects/gm.local/var/uploads/original/' . $filename);
+            $scale = intval($scale) / 100;
+
+            $file
+                ->resize($owidth / $scale, $oheight / $scale)
+                ->crop($width, $height, intval($left / $scale), intval($top / $scale))
+                ->save($target['directory'] . '/' . $target['filename']);
+        }
+    }
+
     public function getSizes()
     {
         return $this->sizes;

@@ -16,7 +16,8 @@
                 <td>{% include 'dashboard/partials/single-photo.html.twig' with {
                         photo: partner.imageByName('admin-preview'),
                         delete_url: path('partner_delete_image', { id: partner.id }),
-                        regenerate_url: path('partner_regenerate_image', { id: partner.id })
+                        regenerate_url: path('partner_regenerate_image', { id: partner.id }),
+                        photo_raw: partner.image
                     } %}
                 </td>
             </tr>

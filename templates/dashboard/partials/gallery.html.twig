@@ -4,6 +4,7 @@
             <img src="{{ asset('uploads/photos/' ~ photo) }}" />
             <a href="javascript:" data-index="{{ loop.index - 1 }}" class="button button-small delete-image">{{ 'Delete Photo' | trans }}</a>
             <a href="javascript:" data-index="{{ loop.index - 1 }}" class="button button-small generate-image">{{ 'Generate' | trans }}</a>
+            <a href="javascript:" class="button button-small edit-photo" data-photo="{{ photo_raw | json_encode }}">{{ 'Edit Photo' | trans }}</a>
         </div>
     {% endfor %}
 </div>
