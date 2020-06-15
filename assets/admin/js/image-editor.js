@@ -289,7 +289,7 @@ export class ImageEditorComponent extends Component {
         let current = this.state.sizesMap[this.state.active];
         if (typeof current === "undefined") {
             return {
-                left: 0, top: 0
+                left: 0, top: 0, width: 0, height: 0
             };
         }
         return current;
