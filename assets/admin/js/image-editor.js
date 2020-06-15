@@ -50,7 +50,11 @@ export default function imageEditor() {
             const sizes = await axios.get('/dashboard/images/sizes')
                 .then(response => response.data);
 
-            ReactDOM.render(<ImageEditorComponent photo={photo.original} files={photo.files} sizes={sizes} />, imageEditor);
+            const randomNumber = Math.floor(Math.random() * 1000);
+
+            // imageEditor.innerHTML = '';
+
+            ReactDOM.render(<ImageEditorComponent photo={photo.original} files={photo.files} sizes={sizes} id={randomNumber} />, imageEditor);
         });
     }
 
@@ -118,7 +122,7 @@ export class ImageEditorComponent extends Component {
         this.scaleWidth = 0;
         this.scaleHeight = 0;
 
-        const {photo, sizes, files} = props;
+        const {photo, sizes, files, id} = props;
 
         const sizesMap = {};
 
@@ -134,15 +138,11 @@ export class ImageEditorComponent extends Component {
             };
         }
 
-        console.log(files);
-
         this.state = {
-            sizes, photo, sizesMap, files,
+            sizes, photo, sizesMap, files, id,
             active: '',
             text: null
         };
-
-        console.log(sizes);
     }
 
     processPreview() {
@@ -351,6 +351,35 @@ export class ImageEditorComponent extends Component {
         axios.post(`/dashboard/images/generate-thumbnails`, formData)
             .then(response => response.data)
             .then(response => alert('Image successfully updated!'));
+    }
+
+    static getDerivedStateFromProps(props, state) {
+
+        if (state.id === props.id) {
+            return {};
+        }
+
+        const {photo, sizes, files, id} = props;
+
+        const sizesMap = {};
+
+        for (const size of sizes) {
+            sizesMap[size.name] = {
+                width: size.width,
+                height: size.height,
+                left: 0,
+                top: 0,
+                scale: 100,
+                _width: 0,
+                _height: 0
+            };
+        }
+
+        return {
+            sizes, photo, sizesMap, files, id,
+            active: '',
+            text: null
+        };
     }
 
     render() {
