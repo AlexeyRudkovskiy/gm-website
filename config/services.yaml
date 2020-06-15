@@ -52,7 +52,6 @@ services:
                 - { name: 'post-tablet', width: 320, height: 412, crop: 0, resize: 0, fit: 1 }
                 - { name: 'post-mobile', width: 440, height: 200, crop: 0, resize: 0, fit: 1 }
                 - { name: 'post-mobile-small', width: 280, height: 200, crop: 0, resize: 0, fit: 1 }
-                - { name: 'popup-large', width: 970, height: 392, crop: 0, resize: 0, fit: 1 }
                 - { name: 'slider-small', width: 966, height: 650, crop: 0, resize: 0, fit: 1 }
                 - { name: 'slider-tablet', width: 768, height: 550, crop: 0, resize: 0, fit: 1 }
                 - { name: 'slider-mobile', width: 480, height: 400, crop: 0, resize: 0, fit: 1 }
