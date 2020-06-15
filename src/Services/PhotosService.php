@@ -84,7 +84,9 @@ class PhotosService
             $top = $data['top'];
             $left = $data['left'];
 
-            $file = $this->imageManager->make('/mnt/g/Projects/PhpStormProjects/gm.local/var/uploads/original/' . $filename);
+            $originalsFolder = dirname(__FILE__) . '/../../var/uploads/original/';
+
+            $file = $this->imageManager->make($originalsFolder . $filename);
             $scale = intval($scale) / 100;
 
             $file
