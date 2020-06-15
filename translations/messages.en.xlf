@@ -513,6 +513,10 @@
         <source>Remember Me</source>
         <target>Remember Me</target>
       </trans-unit>
+      <trans-unit id="KpL3_.m" resname="Menu">
+        <source>Menu</source>
+        <target>Menu</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -17,6 +17,10 @@ import axios from 'axios'
     };
 
     window.addEventListener('load', () => {
+        const menuIcon = document.querySelector('.header-navigation a.menu');
+        const menuPopup = document.querySelector('.header-navigation .popup-menu');
+        const closeMenu = menuPopup.querySelector('.close-icon');
+
         const projectsAndProducts = document.querySelectorAll('.grid-item');
         const contentMargin = 20;
         const popup = document.querySelector('.popup-container');
@@ -30,6 +34,9 @@ import axios from 'axios'
         const totalSlides = slides.length;
         let currentSlide = 0;
         let popupImage = popup.querySelector('.popup-header img');
+
+        menuIcon.addEventListener('click', () => menuPopup.classList.toggle('invisible'));
+        closeMenu.addEventListener('click', () => menuPopup.classList.toggle('invisible'));
 
         popupClose.addEventListener('click', () => {
             popupContent.innerHTML = '';

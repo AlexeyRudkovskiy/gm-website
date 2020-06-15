@@ -25,6 +25,16 @@
     <header class="header">
         <div class="container">
             <nav class="header-navigation">
+                <div class="popup-menu">
+                    <div class="close-icon"><a href="javascript:">X</a></div>
+                    <nav class="items">
+                        <span>{{'Menu'|trans}}</span>
+                        <a href="javascript:">{{'Products and services' | trans}}</a>
+                        <a href="javascript:">{{ 'Our Projects' | trans }}</a>
+                        <a href="javascript:">{{ 'Our Partners' | trans }}</a>
+                        <a href="javascript:">{{'Contacts'|trans}}</a>
+                    </nav>
+                </div>
                 <a href="javascript:" class="menu"><img src="{{ asset('assets/frontend/menu.png') }}" /></a>
                 <a href="javascript:" class="logo"><img src="{{ asset('assets/frontend/logo.png') }}" /></a>
                 <a href="javascript:">{{'Products and services' | trans}}</a>
