@@ -29,18 +29,18 @@
                     <div class="close-icon"><a href="javascript:">X</a></div>
                     <nav class="items">
                         <span>{{'Menu'|trans}}</span>
-                        <a href="javascript:">{{'Products and services' | trans}}</a>
-                        <a href="javascript:">{{ 'Our Projects' | trans }}</a>
-                        <a href="javascript:">{{ 'Our Partners' | trans }}</a>
-                        <a href="javascript:">{{'Contacts'|trans}}</a>
+                        <a href="#our-products">{{'Products and services' | trans}}</a>
+                        <a href="#our-projects">{{ 'Our Projects' | trans }}</a>
+                        <a href="#our-partners">{{ 'Our Partners' | trans }}</a>
+                        <a href="#contact-us">{{'Contacts'|trans}}</a>
                     </nav>
                 </div>
                 <a href="javascript:" class="menu"><img src="{{ asset('assets/frontend/menu.png') }}" /></a>
                 <a href="javascript:" class="logo"><img src="{{ asset('assets/frontend/logo.png') }}" /></a>
-                <a href="javascript:">{{'Products and services' | trans}}</a>
-                <a href="javascript:">{{ 'Our Projects' | trans }}</a>
-                <a href="javascript:">{{ 'Our Partners' | trans }}</a>
-                <a href="javascript:">{{'Contacts'|trans}}</a>
+                <a href="#our-products">{{'Products and services' | trans}}</a>
+                <a href="#our-projects">{{ 'Our Projects' | trans }}</a>
+                <a href="#our-partners">{{ 'Our Partners' | trans }}</a>
+                <a href="#contact-us">{{'Contacts'|trans}}</a>
                 <div class="language-dropdown">
                     <div class="current-language">{{dashboard.currentLocale|capitalize}}</div>
                     <nav class="available-languages">
@@ -111,7 +111,7 @@
         </div>
     </div>
 
-    <div class="container container-offset-top-small">
+    <div class="container container-offset-top-small" id="our-products">
 
         <h1>{{'Products and Services' | trans}}</h1>
 
@@ -122,7 +122,7 @@
         </div>
     </div>
 
-    <div class="container container-offset-top">
+    <div class="container container-offset-top" id="our-projects">
 
         <h1>{{'Our Projects' | trans}}</h1>
 
@@ -133,7 +133,7 @@
         </div>
     </div>
 
-    <div class="container container-offset-top-100">
+    <div class="container container-offset-top-100" id="our-partners">
 
         <h1>{{'Our Partners' | trans}}</h1>
 
@@ -144,7 +144,7 @@
         </div>
     </div>
 
-    <div class="container container-offset-top-100">
+    <div class="container container-offset-top-100" id="contact-us">
         <h1>{{'Have questions?' | trans}}</h1>
 
         <div class="contact-form-container">
