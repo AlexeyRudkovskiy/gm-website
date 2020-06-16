@@ -10,8 +10,11 @@ use App\Repository\ContactRequestRepository;
 use App\Repository\PageMetaTagsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Psr\Container\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\Security\Core\Security;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 
@@ -54,11 +57,15 @@ class DashboardService
     /** @var Security */
     private $security;
 
+    /** @var array */
+    private $roles = [];
+
     public function __construct(
         ContactRequestRepository $contactRequestRepository,
         PageMetaTagsRepository $pageMetaTagsRepository,
         TranslatorInterface $translator,
         RequestStack $requestStack,
+        ContainerInterface $container,
         string $settingsPath
     )
     {
@@ -67,6 +74,16 @@ class DashboardService
         $this->contactRequestRepository = $contactRequestRepository;
         $this->pageMetaTagsRepository = $pageMetaTagsRepository;
         $this->requestStack = $requestStack;
+
+        $token = $container->get('security.token_storage')->getToken();
+
+        if ($token !== null) {
+            $user = $token->getUser();
+
+            if ($user instanceof UserInterface) {
+                $this->roles = $user->getRoles();
+            }
+        }
     }
 
     public function getSidebar()
@@ -78,14 +95,14 @@ class DashboardService
                 ->addItem('project_index', $this->translator->trans('Projects'), 0, [ 'project_new', 'project_edit', 'project_show' ], 'ROLE_PROJECTS')
                 ->addItem('partner_index', $this->translator->trans('Partners'), 0, [ 'partner_new', 'partner_edit', 'partner_show' ], 'ROLE_PARTNERS')
 
-                ->filter($this->security)
+                ->filter($this->roles)
             ,
 
             (new SidebarSection())
                 ->setSectionName($this->translator->trans('Contact Requests'))
                 ->addItem('contact_request_index', $this->translator->trans('Contact Requests'), $this->getContactRequestsCount(), [], 'ROLE_MANAGER')
 
-                ->filter($this->security),
+                ->filter($this->roles),
 
 
             (new SidebarSection())
@@ -95,7 +112,7 @@ class DashboardService
                 ->addItem('user_index', $this->translator->trans('Users'), 0, ['user_show', 'user_edit', 'user_new'], 'ROLE_ADMIN')
                 ->addItem('website_settings', $this->translator->trans('Settings'), 0, ['website_settings'], 'ROLE_ADMIN')
 
-                ->filter($this->security)
+                ->filter($this->roles)
             ,
         ];
     }

@@ -80,13 +80,13 @@ class SidebarSection
     }
 
     /**
-     * @param Security $security
+     * @param array $roles
      * @return SidebarSection
      */
-    public function filter(Security $security): SidebarSection
+    public function filter(array $roles): SidebarSection
     {
-        $this->items = array_filter($this->items, function ($item) use ($security) {
-            return $security->isGranted($item['role'] ?? 'ROLE_USER');
+        $this->items = array_filter($this->items, function ($item) use ($roles) {
+            return in_array($item['role'] ?? 'ROLE_USER', $roles);
         });
 
         return $this;
