@@ -59,7 +59,6 @@ class DashboardService
         PageMetaTagsRepository $pageMetaTagsRepository,
         TranslatorInterface $translator,
         RequestStack $requestStack,
-        Security $security,
         string $settingsPath
     )
     {
@@ -68,7 +67,6 @@ class DashboardService
         $this->contactRequestRepository = $contactRequestRepository;
         $this->pageMetaTagsRepository = $pageMetaTagsRepository;
         $this->requestStack = $requestStack;
-        $this->security = $security;
     }
 
     public function getSidebar()
