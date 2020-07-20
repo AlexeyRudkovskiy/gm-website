@@ -38,6 +38,12 @@ import axios from 'axios'
         menuIcon.addEventListener('click', () => menuPopup.classList.toggle('invisible'));
         closeMenu.addEventListener('click', () => menuPopup.classList.toggle('invisible'));
 
+        popup.addEventListener('click', (e) => {
+            if (e.target.classList.contains('popup-container')) {
+                popupClose.click();
+            }
+        });
+
         popupClose.addEventListener('click', () => {
             popupContent.innerHTML = '';
             popup.classList.add('hidden');
