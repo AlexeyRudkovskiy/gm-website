@@ -1,0 +1,15 @@
+.header {
+  .header-navigation {
+    --padding-top: 20px;
+    --padding-left: 32px;
+    --margin-top: -20px;
+    --margin-left: -32px;
+
+    padding: var(--padding-top) var(--padding-left);
+    margin-left: var(--margin-left);
+    margin-top: var(--margin-top);
+    border-radius: 3px;
+    box-shadow: 0 3px 16px rgba(black, 0.25);
+    background-color: var(--base-dark-color);
+  }
+}

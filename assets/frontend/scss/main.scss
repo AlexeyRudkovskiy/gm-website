@@ -16,6 +16,10 @@
 @import "footer";
 @import "popup";
 
+@media screen and (min-width: 681px) {
+  @import "responsive-general/header";
+}
+
 @media screen and (max-width: 1366px) and (min-width: 1000px) {
   @import "responsive-1000/general";
   @import "responsive-1000/content-grid";
