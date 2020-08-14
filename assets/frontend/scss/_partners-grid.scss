@@ -13,12 +13,12 @@
 
     img {
       filter: grayscale(100%);
-      transition: 0.1s filter;
-      cursor: pointer;
+      //transition: 0.1s filter;
+      //cursor: pointer;
       vertical-align: middle;
 
       &:hover {
-        filter: unset;
+        //filter: unset;
       }
     }
   }
