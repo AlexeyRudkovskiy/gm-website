@@ -2,6 +2,12 @@ import axios from 'axios'
 
 (() => {
     let map;
+    const languageDropdown = document.querySelector('.language-dropdown');
+    const currentLanguage = languageDropdown.querySelector('.current-language');
+
+    currentLanguage.addEventListener('click', () => {
+        languageDropdown.classList.toggle('active');
+    });
 
     window.initMap = () => {
         let location = { lat: 52.5050293, lng: 13.3402111 };

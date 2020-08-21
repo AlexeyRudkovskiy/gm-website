@@ -27,7 +27,7 @@
     }
   }
 
-  &:not(:hover) {
+  &:not(:hover), &:not(.active) {
     .available-languages {
       display: none;
     }
