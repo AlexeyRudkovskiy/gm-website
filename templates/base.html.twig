@@ -207,10 +207,6 @@
                     {% endfor %}
                 </nav>
             </div>
-            <div class="projects footer-section">
-                <b class="footer-section-header">{{ 'Our Projects' | trans }}</b>
-                {{ dashboard.setting('translations.'~app.request.locale~'.projects')|markdown }}
-            </div>
             <div class="subscribe footer-section">
                 <div class="visible-only-1000 margin-top">
                     <b class="years">2010-{{'now'|date('Y')}}</b><br>
